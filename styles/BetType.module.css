@@ -1,0 +1,4 @@
+.div {
+    @apply flex flex-wrap mt-1 items-center
+  
+}
