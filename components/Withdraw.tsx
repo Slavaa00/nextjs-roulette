@@ -65,7 +65,7 @@ function Withdraw() {
         <>
             <div className="flex flex-col justify-center items-center">
                 <button className="mt-10 w-52 text-3xl bg-[#22c55e] text-white font-bold py-2 px-4 rounded-md active:opacity-50  disabled:opacity-50 hover:bg-[#15803d]" onClick={async () => {await withdrawPlayer()}} disabled={isLoading || isFetching}>Withdraw</button>
-                <div className="mt-3 text-xl font-normal">Overall liquidity of the Casino Smart Contract: <span className="font-bold">{ overallLiquidity ? (ethers.utils.formatEther(overallLiquidity).toString()) : (0) }</span> ETH </div>
+                <div className="mt-3 text-xl font-normal">Overall liquidity of the Casino Smart Contract: <span className="font-bold">{ overallLiquidity ? (ethers.utils.formatEther(overallLiquidity).toString()) : (0) }ETH</span>  </div>
                 {isOwner ? ( <button className="mt-6 w-max text-3xl bg-[#ff0062] text-white font-bold py-2 px-4 rounded-md active:opacity-50  hover:bg-[#00fffb] disabled:opacity-50 " onClick={async () => {await withdrawOwner()}} disabled={wheelSpinning}>Withdraw Owner</button>) : (null)}
                
               

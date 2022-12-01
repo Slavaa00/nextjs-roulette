@@ -1,0 +1,8 @@
+.playerBet {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    height: 450px;
+    margin-top: 0.5rem;
+    border: 1px solid black;
+}

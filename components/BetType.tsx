@@ -17,18 +17,18 @@ import { v4 } from 'uuid';
 
 import styles from "../styles/BetType.module.css"
 
-const betTypesArr = [
-    "Single Number (Straight Up)",
-    "Double Numbers (Split)",
-    "Three Numbers (Street)",
-    "Four Numbers (Corner Bet)",
-    "Six Numbers (Line)",
-    "Column (Twelve Numbers)",
-    "Twelve Numbers (Dozen)",
-    "Eighteen Numbers (Low (1-18) or High (19-36))",
-    "Even or Odd",
-    "Color (Black or Red)",
-]
+// const betTypesArr = [
+//     "Single Number (Straight Up)",
+//     "Double Numbers (Split)",
+//     "Three Numbers (Street)",
+//     "Four Numbers (Corner Bet)",
+//     "Six Numbers (Line)",
+//     "Column (Twelve Numbers)",
+//     "Twelve Numbers (Dozen)",
+//     "Eighteen Numbers (Low (1-18) or High (19-36))",
+//     "Even or Odd",
+//     "Color (Black or Red)",
+// ]
 
 function BetType() {
     const [_betTypeForUI, set_betTypeForUI] = useState("")
@@ -48,7 +48,8 @@ function BetType() {
         currentCasinoBalance,
         lastWinningNumber,
         _betType,
-        set_betType
+        set_betType,
+        betTypesArr
     }: any = useContext(AppContext)
 
     function onClick(betType_: string): MouseEventHandler<HTMLButtonElement> {

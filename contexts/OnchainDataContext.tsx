@@ -36,6 +36,19 @@ const provider = new ethers.providers.WebSocketProvider(ALCHEMY_API)
 
 const contract = new ethers.Contract(rouletteAddress!, abi, provider)
 
+const betTypesArr = [
+    "Single Number (Straight Up)",
+    "Double Numbers (Split)",
+    "Three Numbers (Street)",
+    "Four Numbers (Corner Bet)",
+    "Six Numbers (Line)",
+    "Column (Twelve Numbers)",
+    "Twelve Numbers (Dozen)",
+    "Eighteen Numbers (Low (1-18) or High (19-36))",
+    "Even or Odd",
+    "Color (Black or Red)",
+]
+
 function OnchainDataContext({ children }: Props) {
     const owner = "0x941B1003Ecfa954F2ED01B94cF5197fa0748F6f9";
 
@@ -193,7 +206,8 @@ function OnchainDataContext({ children }: Props) {
                 handleSuccess,
                 handleNewNotification,
                 overallLiquidity, 
-                setOverallLiquidity
+                setOverallLiquidity,
+                betTypesArr
             }}
         >
             {children}
