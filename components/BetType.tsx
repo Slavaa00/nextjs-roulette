@@ -100,7 +100,7 @@ function BetType() {
         
     }
 
-useEffect(() => {console.log(_betType)}, [_betType])
+// useEffect(() => {console.log(_betType)}, [_betType])
 
 // className={ `${_betType == betType ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")} ml-2 mt-3 border p-1 rounded-md text-base font-semibold`}  
     return (
@@ -115,7 +115,7 @@ useEffect(() => {console.log(_betType)}, [_betType])
                         <button
                             onClick={() => {onClick(betType)}} //ff0062  000dff
                             key={v4()}
-                            className={ `${betType == _betTypeForUI ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")} ml-2 mt-3 border p-1 rounded-md text-base font-semibold`} 
+                            className={ `${betType == _betTypeForUI ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")} ml-2 mt-3 border p-1 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`} 
                         >
                             {betType}
                         </button>

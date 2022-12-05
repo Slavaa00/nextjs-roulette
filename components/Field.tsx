@@ -36,18 +36,34 @@ function Field() {
     }: any = useContext(AppContext)
 
     
-
- 
+    function colorizeLastWinningNumber(_lastWinningNumber) {
+        if (_lastWinningNumber == 0 ) {
+             return "text-[#22c55e]"
+        } else {
+         if ((_lastWinningNumber < 11 || (_lastWinningNumber > 18 && _lastWinningNumber < 29)) && (_lastWinningNumber % 2 == 0)) {
+             return "text-black"
+         } else if ((_lastWinningNumber > 28 || (_lastWinningNumber > 10 && _lastWinningNumber < 19)) && (_lastWinningNumber % 2 == 1)) {
+             return "text-black"
+         } 
+         
+         else if ((_lastWinningNumber < 11 || (_lastWinningNumber > 18 && _lastWinningNumber < 30)) && (_lastWinningNumber % 2 == 1)) {
+             return "text-[#dc2626]"
+         } else if ((_lastWinningNumber > 29 || (_lastWinningNumber > 10 && _lastWinningNumber < 19)) && (_lastWinningNumber % 2 == 0)) {
+             return "text-[#dc2626]"
+         } 
+        }
+ }
+ // 
     return (
         <>
             <div className="flex flex-col justify-center items-center">
-                <div className="w-full h-[8rem] pl-2 ">
-                    <p className="text-xl font-bold mt-2 text-[#533adb]">Last Winning Number: <span>{lastWinningNumber}</span></p>
+                <div className="w-max h-[8rem] pl-2 ">
+                    <p className="text-xl font-bold mt-2 text-[#533adb]">Last Winning Number: <span className={`${colorizeLastWinningNumber(lastWinningNumber)} text-xl font-bold mt-2 `}>{lastWinningNumber}</span></p>
                     <p className="text-xl font-semibold mt-3 ">All Players Winnings: <span>{ethers.utils.formatEther(allPlayersWinnings).toString()}</span> ETH</p>
                     <p className="text-xl font-bold mt-3 text-[#dc2626]">Current Casino Balance: <span>{ethers.utils.formatEther(currentCasinoBalance).toString()} ETH</span></p>
 
                 </div>
-               <div className="">
+               <div className="cursor-default">
                 <Image 
                 src="/roulette-field.png"
                 alt="Roulette Field"

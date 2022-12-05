@@ -22,7 +22,11 @@ function CreateBetSpendDepositButton() {
         lastWinningNumber,
         msgValue,
         _betType,
-        _numbers
+        _numbers,
+        confetti, 
+        setConfetti,
+        setBetsSum,
+        betsSum
     }: any = useContext(AppContext)
 
     const {
@@ -36,23 +40,33 @@ function CreateBetSpendDepositButton() {
         params: {
             _betType: _betType,
             _numbers: _numbers,
-            _amount: msgValue,
+            _amount: (msgValue ? ethers.utils.parseUnits(msgValue, "ether") : "0")
         },
        
     })
-
+  
   return (
     <> 
     <button
-    className="ml-12 rounded bg-red-600 py-2 px-4 font-bold text-white hover:bg-red-700 disabled:opacity-50"
-    onClick={async function () {
-        await createBetSpendDeposit()
+    className="ml-[2rem] rounded-lg bg-red-600  px-1 h-[7rem] w-[21rem] text-2xl font-bold text-white hover:bg-red-800 disabled:opacity-50"
+    onClick={ async function () {
+        await createBetSpendDeposit({
+            onSuccess: async (tx: any) => {
+                handleSuccess(tx as ContractTransaction);
+                // setBetsSum((betsSum) => (Number(betsSum) + Number(msgValue)).toString());
+                localStorage.setItem("betsSum", (Number(localStorage.getItem("betsSum")) + Number(msgValue)).toString());
+                // setTimeout(async () => {
+                //     await updateUI()
+                // }, 110000)
+            },
+        });
+
     }}
     disabled={isLoading || isFetching}
 >
-    Make a Bet
-    <br />
-    spending a Deposit
+    Make a Bet 
+    <p className="mt-2">
+    by spending a Deposit</p>
 </button>
 </>
   )

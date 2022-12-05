@@ -60,11 +60,12 @@ function OnchainDataContext({ children }: Props) {
 
     const [_betType, set_betType] = useState(0)
     const [_numbers, set_numbers] = useState([])
-    const [msgValue, set_msgValue] = useState()
+    const [msgValue, set_msgValue] = useState("")
 
     const [allPlayersWinnings, setAllPlayersWinnings] = useState("0")
     const [currentCasinoBalance, setCurrentCasinoBalance] = useState("0")
     const [lastWinningNumber, setLastWinningNumber] = useState("0")
+    const [betsArrLength, setBetsArrLength] = useState("0")
 
     const [moneyInTheBank, setMoneyInTheBank] = useState("0")
 
@@ -72,10 +73,36 @@ function OnchainDataContext({ children }: Props) {
 
     const [overallLiquidity, setOverallLiquidity] = useState()
 
-    async function checkResult(_newAllPlayersWinnings: string, _newCurrentCasinoBalance: string) {
+    const [playerBalance, setPlayerBalance] = useState("0")
+
+    const [betsSum, setBetsSum] = useState(localStorage.getItem("betsSum") || "0")
+    
+    useEffect(() => {
+        console.log(betsSum)
+    }, [betsSum])
+  
+
+    const [confetti, setConfetti] = useState(false)
+
+
+ 
+    async function updatePlayerBalance() {
+        if (account) {
+            await contract.checkBalance(account).then((value: any) => {
+                if (value.toString() != playerBalance) {
+                    setPlayerBalance(value.toString())
+    
+                }
+               
+             })
+        }
+       
+    }
+
+    async function checkResult(_newAllPlayersWinnings: string, _newCurrentCasinoBalance: string, _newbetsArrLength: string) {
         if (
-            _newAllPlayersWinnings == allPlayersWinnings &&
-            _newCurrentCasinoBalance == currentCasinoBalance
+            (_newAllPlayersWinnings == allPlayersWinnings &&
+            _newCurrentCasinoBalance == currentCasinoBalance) && (_newbetsArrLength == betsArrLength)
         ) {
             setWheelSpinnning(true)
             setTimeout(() => {
@@ -88,6 +115,7 @@ function OnchainDataContext({ children }: Props) {
     async function updateUI() {
         let newAllPlayersWinnings: string = "0"
         let newCurrentCasinoBalance: string = "0"
+        let newbetsArrLength: string = "0"
         if (allPlayersWinnings != "0" && currentCasinoBalance != "0") {
             await contract.allPlayersWinnings().then((value: any) => {
                 console.log(value.toString())
@@ -116,8 +144,15 @@ function OnchainDataContext({ children }: Props) {
                     setMoneyInTheBank(value.toString())
                 }
             })
-
-            await checkResult(newAllPlayersWinnings, newCurrentCasinoBalance)
+            
+            await contract.getArrayOfBets().then((value: any) => {
+                newbetsArrLength = value.filter(function(bet) {return bet[0].toLowerCase() == account.toLowerCase()}).length.toString()
+                setBetsArrLength(newbetsArrLength)    
+            })
+            
+               
+            await updatePlayerBalance()
+            await checkResult(newAllPlayersWinnings, newCurrentCasinoBalance, newbetsArrLength)
         } else {
             await contract.allPlayersWinnings().then((value: any) => {
                 newAllPlayersWinnings = value.toString()
@@ -138,8 +173,9 @@ function OnchainDataContext({ children }: Props) {
             await contract.getCurrentContractBalance().then((value: any) => {
                 setOverallLiquidity(value.toString())
             })
-
-            await checkResult(newAllPlayersWinnings, newCurrentCasinoBalance)
+            
+            await updatePlayerBalance()
+            await checkResult(newAllPlayersWinnings, newCurrentCasinoBalance, "1")
         }
     }
 
@@ -152,12 +188,14 @@ function OnchainDataContext({ children }: Props) {
     // })
 
     // contract.on("GameFinished", async (winningNumber, time) => {
-    //     await updateUI()
+    //     setTimeout(async () => {await updateUI()}, 5001)
     // })
 
     const handleSuccess = async function (tx: ContractTransaction) {
         await tx.wait(1)
-        handleNewNotification()
+        handleNewNotification();
+        setConfetti(true);
+        await updateUI();
     }
 
     const handleNewNotification = function () {
@@ -207,7 +245,14 @@ function OnchainDataContext({ children }: Props) {
                 handleNewNotification,
                 overallLiquidity, 
                 setOverallLiquidity,
-                betTypesArr
+                betTypesArr,
+                updatePlayerBalance,
+                playerBalance,
+                confetti, 
+                setConfetti,
+                betsSum, 
+                setBetsSum
+                
             }}
         >
             {children}

@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-export interface Bet {
+export type Bet = {
     id: number
     _betType: number
     _numbers: number[]

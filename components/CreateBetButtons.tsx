@@ -3,7 +3,7 @@ import { AppContext } from "../contexts/OnchainDataContext"
 import { BigNumber, ethers, ContractTransaction } from "ethers"
 import { useWeb3Contract, useMoralis } from "react-moralis"
 
-import CreateBetSpendDepositButton from "./createBetSpendDepositButton"
+import CreateBetSpendDepositButton from "./CreateBetSpendDepositButton"
 
 function CreateBetButton() {
     const {
@@ -22,7 +22,11 @@ function CreateBetButton() {
         lastWinningNumber,
         msgValue,
         _betType,
-        _numbers
+        _numbers,
+        confetti, 
+        setConfetti,
+        setBetsSum,
+        betsSum
     }: any = useContext(AppContext)
 
    
@@ -39,28 +43,38 @@ function CreateBetButton() {
             _betType: _betType,
             _numbers: _numbers,
         },
-        msgValue: msgValue
+        msgValue: (msgValue ? ethers.utils.parseUnits(msgValue, "ether") : "0")
     })
 
-   
-
+ 
     return (
         <>
-            <div className="flex flex-col">
-                <div className="mt-5 flex items-center justify-center">
+            <div className="flex flex-col mt-3">
+                <div className=" flex items-center justify-center">
                     <button
-                        className="ml-auto h-16  w-40 rounded bg-black py-2 px-4 font-bold text-white hover:bg-gray-600"
+                        className="ml-auto  px-2 h-[7rem] w-[21rem] text-2xl  rounded-lg bg-black  px-2 font-bold text-white hover:bg-gray-600"
                         onClick={async function () {
+                           
+
                             await createBet({
-                                onSuccess: (tx: any) => handleSuccess(tx as ContractTransaction),
-                            })
+                                onSuccess: async (tx: any) => {
+                                    handleSuccess(tx as ContractTransaction);
+                                    // setBetsSum((betsSum) => (Number(betsSum) + Number(msgValue)).toString());
+                                    localStorage.setItem("betsSum", (Number(localStorage.getItem("betsSum")) + Number(msgValue)).toString());
+
+                                    // setTimeout(async () => {
+                                    //     await updateUI()
+                                    // }, 110000)
+                                },
+                            });
+
                         }}
                         disabled={isLoading || isFetching}
                     >
                         {isLoading || isFetching ? (
-                            <div className="spinner-border h-8 w-8 animate-spin rounded-full border-b-2"></div>
+                            <div className="spinner-border m-auto text-center h-8 w-8 animate-spin rounded-full border-b-2"></div>
                         ) : (
-                            <div>Make a new Bet</div>
+                            <div>Make a new Bet<p className="mt-2">by spending wallet money</p></div>
                         )}
                     </button>
                             <CreateBetSpendDepositButton />

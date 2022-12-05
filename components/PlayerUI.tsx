@@ -28,31 +28,37 @@ function PlayerUI() {
         msgValue,
         _betType,
         _numbers,
-        overallLiquidity
+        overallLiquidity,
+        updatePlayerBalance,
+        playerBalance
     }: any = useContext(AppContext)
 
-    const [playerBalance, setPlayerBalance] = useState("0")
 
     useEffect(() => {
         if (account) {
+
             async function asyncUpdatePlayerBalance() {
                         await updatePlayerBalance()
                     }
                     asyncUpdatePlayerBalance()
+
         }
         
 
-    }, [overallLiquidity, account])
+    }, [overallLiquidity, account, allPlayersWinnings])
+
+    useEffect(() => {
+        if (account) {
+
+            localStorage.setItem("betsSum", "0");
 
 
-    async function updatePlayerBalance() {
-        await contract.checkBalance(account).then((value: any) => {
-            if (value.toString() != playerBalance) {
-                setPlayerBalance(value.toString())
+        }
+        
 
-            }
-         })
-    }
+    }, [account])
+
+   
    
 // [#ff0062]
     return (

@@ -13,6 +13,11 @@ import {
 } from "ethers"
 import { useWeb3Contract, useMoralis } from "react-moralis"
 
+import styles from "../styles/DepositButton.module.css"
+
+
+
+
 function DepositButton() {
     const [depositValue, setDepositValue] = useState("")
 
@@ -23,7 +28,7 @@ function DepositButton() {
                     .parseUnits(e.target.value, "ether")
                     .toString()
             )
-        } else setDepositValue("")
+        } else {setDepositValue("")}
     }
 
     const input = useRef()
@@ -42,6 +47,8 @@ function DepositButton() {
         allPlayersWinnings,
         currentCasinoBalance,
         lastWinningNumber,
+        confetti, 
+        setConfetti
     }: any = useContext(AppContext)
 
     const {
@@ -54,16 +61,22 @@ function DepositButton() {
         functionName: "deposit",
         msgValue: depositValue,
     })
+  
     return (
         <>
-            <div className="mt-2 mr-8 flex items-center justify-center">
+            <div className={styles.depositButtonDiv}>
                 <label htmlFor="deposit">
                     <button
-                        className="mb-2 mr-3 h-16 w-40 rounded bg-green-500 py-2 px-4 text-xl font-bold text-white hover:bg-green-700"
+                        className=" mb-2 mr-3 h-16 w-40 rounded bg-green-500 py-1 px-4 text-3xl font-bold text-white hover:bg-green-700"
                         onClick={async function () {
-                            await deposit()
-                            setDepositValue("")
-                            input.current.value = ""
+                            setConfetti(false);
+                            await deposit({
+                                onSuccess: async (tx: any) => {setTimeout(async () => {
+                                    await updateUI()
+                                }, 20000)},
+                            });
+                            setDepositValue("");
+                            input.current.value = "";
                         }}
                     >
                         Deposit
@@ -71,10 +84,11 @@ function DepositButton() {
                 </label>
                 <input
                     ref={input}
-                    className="text-black-900 text-md h-14 w-44 rounded border border-green-500 pl-1 font-medium outline-green-500"
+                    className="[appearance:none] text-black text-lg h-14 w-52 border border-green-500 rounded-md pl-2 font-medium outline-green-500"
                     id="deposit"
-                    type="text"
+                    type="number"
                     placeholder="Deposit amount (ETH)"
+                    minlength="1"
                     // value={depositValue}
                     onChange={onChange}
                 />
@@ -82,5 +96,18 @@ function DepositButton() {
         </>
     )
 }
-
+// .depositInput {
+//     color: black;
+//     font-size: 1.125rem; 
+//     line-height: 1.5rem; 
+//     height: 3.5rem;
+//     width: 13rem;
+//     border: 1px solid #22c55e;
+//     border-radius: 0.375rem;
+//     padding-left: 0.5rem;
+//     font-weight: 500;
+//     outline-color: #22c55e;
+  
+//     /* "[appearance:textfield]     */
+// }
 export default DepositButton

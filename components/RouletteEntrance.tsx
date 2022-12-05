@@ -1,8 +1,12 @@
 import { useContext, useEffect } from "react"
 import { AppContext } from "../contexts/OnchainDataContext"
-import { BigNumber, ethers, ContractTransaction } from "ethers"
+import {
+    BigNumber,
+    ethers,
+    ContractTransaction,
+} from "ethers"
 import { useWeb3Contract, useMoralis } from "react-moralis"
-import { useMetaMask } from "metamask-react";
+import { useMetaMask } from "metamask-react"
 
 import CreateBetButtons from "./CreateBetButtons"
 import DepositButton from "./DepositButton"
@@ -27,10 +31,10 @@ export default function RouletteEntrance() {
         allPlayersWinnings,
         currentCasinoBalance,
         lastWinningNumber,
-        
+        setConfetti,
     }: any = useContext(AppContext)
 
-    const { switchChain } = useMetaMask();
+    const { switchChain } = useMetaMask()
 
     useEffect(() => {
         async function asyncUpdateUI() {
@@ -47,38 +51,51 @@ export default function RouletteEntrance() {
         }
     }, [])
 
-    Moralis.onChainChanged((chain: any) => {
+    Moralis.onChainChanged(async (chain: any) => {
+        setConfetti(false)
+        setTimeout(() => {
+            setConfetti(true)
+        }, 2000)
         if (Number(chain).toString() == chainId) {
             setGoerliNetwork(true)
+            // await updateUI()
         } else {
             setGoerliNetwork(false)
         }
     })
 
     return (
-        <> 
-        <div className="flex ">
-            <div className="w-1/2 h-screen border-green-400 border-2 flex flex-col justify-start items-center">
-                <p className="text-xl mb-2 font-semibold">Privet^_^)</p>
-                {goerliNetwork ? ( 
-                    <> 
-                <DepositButton />
-                <CreateBetButtons />
-                <BetAmountInput />
-                <BetType />
-                <Numbers /> </>) : (<button className="text-4xl bg-[#ff0062] text-white font-bold p-2 rounded-lg" onClick={() => switchChain("0x5")}>Please switch network to Goerli</button>)
-               } 
-            </div>
-            <div className="w-[515px] h-screen border-red-400 border-2 flex flex-col justify-start items-center">
-                <Field />
-
-                
-            </div>
-            <div className="w-1/2 h-screen border-blue-400 border-2 flex flex-col justify-start items-center">
-                <PlayerUI />
-
-                
-            </div>
+        <>
+            <div className="flex ">
+                <div className="flex h-screen w-1/2 flex-col items-center justify-start border-2 border-green-400">
+                    <p className="mb-2 text-xl font-semibold">
+                        Privet^_^)
+                    </p>
+                    {goerliNetwork ? (
+                        <>
+                            <DepositButton />
+                            <BetAmountInput />
+                            <BetType />
+                            <Numbers />
+                            <CreateBetButtons />
+                        </>
+                    ) : (
+                        <button
+                            className="rounded-lg bg-[#ff0062] p-2 text-4xl font-bold text-white"
+                            onClick={() =>
+                                switchChain("0x5")
+                            }
+                        >
+                            Please switch network to Goerli
+                        </button>
+                    )}
+                </div>
+                <div className="flex h-screen w-[515px] flex-col items-center justify-start border-2 border-red-400">
+                    <Field />
+                </div>
+                <div className="flex h-screen w-1/2 flex-col items-center justify-start border-2 border-blue-400">
+                    <PlayerUI />
+                </div>
             </div>
         </>
     )
