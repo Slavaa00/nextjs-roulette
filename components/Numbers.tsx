@@ -18,8 +18,7 @@ import {bets} from "../pages/api/data/bets"
 
 
 function Numbers() {
-    const [_numbersForUI, set_numbersForUI] = useState(0)
-    const [pickedNumbers, setPickedNumbers] = useState(0)
+   
 
     const {
         updateUI,
@@ -40,18 +39,15 @@ function Numbers() {
         _numbers,
         set_numbers,    
         msgValue,
-            
+        onClickNumbers,
+        _numbersForUI,
+        pickedNumbers
     }: any = useContext(AppContext)
 
 
-    function onClick(id: number, _numbers: number[]): MouseEventHandler<HTMLButtonElement> {
-        set_numbers(_numbers)
-        setPickedNumbers(id)
-    }
+  
 
-useEffect(() => {
-    set_numbersForUI(_betType)
-}, [_betType])
+
 
 // useEffect(() => {
 //     console.log(_numbers)
@@ -89,7 +85,7 @@ useEffect(() => {
                 }).map(function ({_betType, _numbers, description, id}) {
                      if (_betType == 0 ) {
                         return (
-                            <button onClick={() => {onClick(id, _numbers)}} 
+                            <button onClick={() => {onClickNumbers(id, _numbers)}} 
                             key={v4()}
                             className={`${id == pickedNumbers ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")}   ml-4 w-10 mt-8 border p-1 px-2 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`}  >
                                 
@@ -99,7 +95,7 @@ useEffect(() => {
                         )
                      } else if (_betType == 1 ) {
                         return (
-                            <button onClick={() => {onClick(id, _numbers)}} 
+                            <button onClick={() => {onClickNumbers(id, _numbers)}} 
                             key={v4()}
                             className={`${id == pickedNumbers ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")}   ml-4 mt-5 w-16 border p-1 px-2 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`}  >
                                 
@@ -109,7 +105,7 @@ useEffect(() => {
                         )
                      } else if (_betType == 2) {
                         return (
-                            <button onClick={() => {onClick(id, _numbers)}} 
+                            <button onClick={() => {onClickNumbers(id, _numbers)}} 
                             key={v4()}
                             className={`${id == pickedNumbers ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")}   ml-6 mt-8 w-24 border p-1 px-2 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`}  >
                                 
@@ -119,7 +115,7 @@ useEffect(() => {
                         )
                      } else if (_betType == 3) {
                         return (
-                            <button onClick={() => {onClick(id, _numbers)}} 
+                            <button onClick={() => {onClickNumbers(id, _numbers)}} 
                             key={v4()}
                             className={`${id == pickedNumbers ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")}   ml-6 mt-4 w-28 border p-1 px-2 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`}  >
                                 
@@ -129,7 +125,7 @@ useEffect(() => {
                         )
                      } else if (_betType == 4) {
                         return (
-                            <button onClick={() => {onClick(id, _numbers)}} 
+                            <button onClick={() => {onClickNumbers(id, _numbers)}} 
                             key={v4()}
                             className={`${id == pickedNumbers ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")}   ml-8 mt-10 w-40 border p-1 px-2 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`}  >
                                 
@@ -140,7 +136,7 @@ useEffect(() => {
                      } else if (_betType == 5 ) {
                         return (
                             
-                            <button onClick={() => {onClick(id, _numbers)}} 
+                            <button onClick={() => {onClickNumbers(id, _numbers)}} 
                             key={v4()}
                             className={`${id == pickedNumbers ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")}   ml-10 mt-6 h-24 w-48 border p-1 px-2 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`}  >
                                 {description}
@@ -151,7 +147,7 @@ useEffect(() => {
                         return (
                           
                         
-                            <button onClick={() => {onClick(id, _numbers)}} 
+                            <button onClick={() => {onClickNumbers(id, _numbers)}} 
                             key={v4()}
                             className={`${id == pickedNumbers ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")}   items-center ml-10 mt-6 pb-10 w-48 h-20 border p-1 px-2 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`}>
                                 {description}
@@ -163,7 +159,7 @@ useEffect(() => {
                         return (
                           
                         
-                            <button onClick={() => {onClick(id, _numbers)}} 
+                            <button onClick={() => {onClickNumbers(id, _numbers)}} 
                             key={v4()}
                             className={`${id == pickedNumbers ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")}   items-center ml-10 first:-ml-0 mt-6 pb-10 w-48 h-[6.5rem] border p-1 px-2 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`}  >
                                 {description}
@@ -175,7 +171,7 @@ useEffect(() => {
                         return (
                           
                         
-                            <button onClick={() => {onClick(id, _numbers)}} 
+                            <button onClick={() => {onClickNumbers(id, _numbers)}} 
                             key={v4()}
                             className={`${id == pickedNumbers ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")}   items-center ml-10 first:-ml-0  mt-6 pb-10 w-48 h-20 border p-1 px-2 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`}  >
                                 {description}
@@ -187,7 +183,7 @@ useEffect(() => {
                         return (
                           
                         
-                            <button onClick={() => {onClick(id, _numbers)}} 
+                            <button onClick={() => {onClickNumbers(id, _numbers)}} 
                             key={v4()}
                             className={`${id == pickedNumbers ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")}   items-center ml-10 first:-ml-0 mt-6 pb-10 w-48 h-20 border p-1 px-2 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`}  >
                                 {description}

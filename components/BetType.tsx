@@ -31,7 +31,6 @@ import styles from "../styles/BetType.module.css"
 // ]
 
 function BetType() {
-    const [_betTypeForUI, set_betTypeForUI] = useState("")
 
     const {
         updateUI,
@@ -49,57 +48,13 @@ function BetType() {
         lastWinningNumber,
         _betType,
         set_betType,
-        betTypesArr
+        betTypesArr,
+        _betTypeForUI,
+        set_betTypeForUI,
+        onClickBetType
     }: any = useContext(AppContext)
 
-    function onClick(betType_: string): MouseEventHandler<HTMLButtonElement> {
-        set_betTypeForUI(betType_)
-        if (betType_ == "Single Number (Straight Up)") {
-            set_betType(0)
-        }
-        if (betType_ == "Double Numbers (Split)") {
-            set_betType(1)
-        }
-        if (betType_ == "Three Numbers (Street)") {
-            set_betType(2)
-        }
-        if (betType_ == "Four Numbers (Corner Bet)") {
-            set_betType(3)
-        }
-        if (betType_ == "Six Numbers (Line)") {
-            set_betType(4)
-        }
-        if (betType_ == "Column (Twelve Numbers)") {
-            set_betType(5)
-        }
-        if (betType_ == "Twelve Numbers (Dozen)") {
-            set_betType(6)
-        }
-        if (betType_ == "Eighteen Numbers (Low (1-18) or High (19-36))") {
-            set_betType(7)
-        }
-        if (betType_ == "Even or Odd") {
-            set_betType(8)
-        }
-        if (betType_ == "Color (Black or Red)") {
-            set_betType(9)
-        }
-        // switch(betType_) {
-        //     case "Single Number (Straight Up)": set_betType(0)
-        //     case "Double Numbers (Split)": set_betType(1)
-        //     case "Three Numbers (Street)": set_betType(2)
-        //     case "Four Numbers (Corner Bet)": set_betType(3)
-        //     case "Six Numbers (Line)": set_betType(4)
-        //     case "Column (Twelve Numbers)": set_betType(5)
-        //     case "Twelve Numbers (Dozen)": set_betType(6)
-        //     case "Eighteen Numbers (Low (1-18) or High (19-36))": set_betType(7)
-        //     case "Even or Odd": set_betType(8)
-        //     case "Color (Red or Black)": set_betType(9)
-           
-        // }
-        
-    }
-
+    
 // useEffect(() => {console.log(_betType)}, [_betType])
 
 // className={ `${_betType == betType ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")} ml-2 mt-3 border p-1 rounded-md text-base font-semibold`}  
@@ -113,7 +68,7 @@ function BetType() {
                 {betTypesArr.map(function (betType) {
                     return (
                         <button
-                            onClick={() => {onClick(betType)}} //ff0062  000dff
+                            onClick={() => {onClickBetType(betType)}} //ff0062  000dff
                             key={v4()}
                             className={ `${betType == _betTypeForUI ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")} ml-2 mt-3 border p-1 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`} 
                         >

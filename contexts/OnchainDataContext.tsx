@@ -62,7 +62,61 @@ function OnchainDataContext({ children }: Props) {
     const [goerliNetwork, setGoerliNetwork] = useState(false)
 
     const [_betType, set_betType] = useState(0)
+    const [_betTypeForUI, set_betTypeForUI] = useState("")
+
+    function onClickBetType(betType_: string): MouseEventHandler<HTMLButtonElement> {
+        set_betTypeForUI(betType_)
+        if (betType_ == "Single Number (Straight Up)") {
+            set_betType(0)
+        }
+        if (betType_ == "Double Numbers (Split)") {
+            set_betType(1)
+        }
+        if (betType_ == "Three Numbers (Street)") {
+            set_betType(2)
+        }
+        if (betType_ == "Four Numbers (Corner Bet)") {
+            set_betType(3)
+        }
+        if (betType_ == "Six Numbers (Line)") {
+            set_betType(4)
+        }
+        if (betType_ == "Column (Twelve Numbers)") {
+            set_betType(5)
+        }
+        if (betType_ == "Twelve Numbers (Dozen)") {
+            set_betType(6)
+        }
+        if (betType_ == "Eighteen Numbers (Low (1-18) or High (19-36))") {
+            set_betType(7)
+        }
+        if (betType_ == "Even or Odd") {
+            set_betType(8)
+        }
+        if (betType_ == "Color (Black or Red)") {
+            set_betType(9)
+        }
+        
+        
+    }
+
+
     const [_numbers, set_numbers] = useState([])
+    const [_numbersForUI, set_numbersForUI] = useState(0)
+    const [pickedNumbers, setPickedNumbers] = useState(0)
+
+    function onClickNumbers(id: number, _numbers: number[]): MouseEventHandler<HTMLButtonElement> {
+        set_numbers(_numbers)
+        setPickedNumbers(id)
+    }
+
+    useEffect(() => {
+        set_numbersForUI(_betType)
+    }, [_betType])
+
+
+
+
     const [msgValue, set_msgValue] = useState("")
 
     const [allPlayersWinnings, setAllPlayersWinnings] = useState("0")
@@ -257,7 +311,15 @@ function OnchainDataContext({ children }: Props) {
                 setBetsSum,
                 startGameValue,
                 minimalBet,
-                maximumBet
+                maximumBet,
+                _betTypeForUI,
+                set_betTypeForUI,
+                onClickBetType,
+                _numbersForUI, 
+                set_numbersForUI,
+                pickedNumbers, 
+                setPickedNumbers,
+                onClickNumbers
                 
             }}
         >
