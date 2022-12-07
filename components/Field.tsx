@@ -69,6 +69,7 @@ function Field() {
                 alt="Roulette Field"
                 width={450}
                 height={500}
+                priority
                 />
                </div>
             </div>

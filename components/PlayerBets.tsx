@@ -58,7 +58,9 @@ function PlayerBets() {
         confetti,
         setConfetti,
         betsSum,
-        setBetsSum
+        setBetsSum,
+        startGameValue
+        
     }: any = useContext(AppContext)
 
     async function updateBetsArr() {
@@ -217,7 +219,7 @@ function PlayerBets() {
          }
         
     }, [
-        playerBalance, currentCasinoBalance
+        playerBalance, allPlayersWinnings, currentCasinoBalance
       
     ])
     useEffect(() => {
@@ -326,10 +328,10 @@ function PlayerBets() {
                               })
                               .map(function (item) {
                                   return (
-                                      <>
-                                          <div className="mt-[0.75rem] flex w-[700px] items-start justify-between">
-                                              <div className="w-1/3 text-center  font-normal">
-                                                  <span>
+                                     
+                                          <div className="mt-[0.75rem] flex w-[700px] items-start justify-between" key={v4()}>
+                                              <div className="w-1/3 text-center  font-normal" >
+                                                  <span >
                                                       {ethers.utils.formatEther(
                                                           item[1]
                                                               .toString()
@@ -338,15 +340,15 @@ function PlayerBets() {
                                                       ETH
                                                   </span>
                                               </div>
-                                              <div className="w-1/3 text-center   font-normal">
-                                                  <span>
+                                              <div className="w-1/3 text-center   font-normal" >
+                                                  <span >
                                                       {writeBetType(
                                                           item[2]
                                                       )}
                                                   </span>
                                               </div>
-                                              <div className="w-1/3 text-center  font-normal">
-                                                  <span>
+                                              <div className="w-1/3 text-center  font-normal" >
+                                                  <span >
                                                       {writeNumbers(
                                                           item[2],
                                                           item[3]
@@ -354,7 +356,7 @@ function PlayerBets() {
                                                   </span>
                                               </div>
                                           </div>
-                                      </>
+                                      
                                   )
                               })
                         : null}
@@ -396,12 +398,13 @@ function PlayerBets() {
                             </div>
                         ) : null}
                     </div>
-                </div>
-
+                </div> 
+                 <div className="w-full pl-8 font-bold ">Total Bet Amount: <span className={`${Number(localStorage.getItem("betsSum")).toFixed(20) >= Number(startGameValue) ? ("text-[#22c55e]") : ("text-[#dc2626]") } `}>{Number(localStorage.getItem("betsSum")).toFixed(17).replace(/0*$/, "")}</span></div>                       
                 {fireConfetti ? <Confetti /> : null}
             </div>
         </>
     )
 }
-
+ // Number(localStorage.getItem("betsSum")).toFixed(100).replace(/0*$/)
+ // BigInt(localStorage.getItem("betsSum")).toString()
 export default PlayerBets

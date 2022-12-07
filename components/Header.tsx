@@ -5,7 +5,7 @@ import { useContext } from "react"
 import Link from 'next/link'
 
 export default function Header() {
-    const { moneyInTheBank, rouletteAddress, msgValue, set_msgValue }: any = useContext(AppContext)
+    const { moneyInTheBank, rouletteAddress, msgValue, set_msgValue, startGameValue,  minimalBet, maximumBet }: any = useContext(AppContext)
 
     return (
         <>
@@ -22,14 +22,14 @@ export default function Header() {
                     </Link>
                 </div>
 
-                <div className="ml-6 flex  flex-col justify-center items-start    font-semibold ">
+                <div className="ml-6 flex  flex-col justify-center items-start font-semibold ">
                     <h2
                         className="text-xl cursor-pointer rounded-full border border-[#533adb] py-2 px-8 font-bold text-[#533adb] hover:text-[#ffffff] hover:bg-[#533adb]"
                         onClick={() => {
                             navigator.clipboard.writeText(
-                                "0.000000001"
+                                startGameValue
                             );
-                            set_msgValue("0.000000001")
+                            set_msgValue(startGameValue)
                         }}
                     >
                         Start Game Value: 0.000000001 ETH
@@ -47,28 +47,28 @@ export default function Header() {
                         className="border cursor-pointer rounded-full text-xl bg-[#ff0062] py-2 px-6 text-center   font-medium text-white hover:text-[#ff0062] hover:bg-[#ffffff]  hover:border-[#ff0062]"
                         onClick={() => {
                             navigator.clipboard.writeText(
-                                "0.01"
+                                maximumBet
                             );
-                            set_msgValue("0.01")
-
+                            set_msgValue(maximumBet)
+                             
                         }}
                     >
-                        Maximum Bet: 0.01 ETH
+                        Maximum Bet: {maximumBet} ETH
                     </h2>
 
                     <h2
                         className="mt-4 cursor-pointer rounded-full text-xl border bg-[#00fffb] border-[#00fffb] py-2 px-6 font-bold text-[#ffffff] hover:text-[#00fffb] hover:bg-[#ffffff]"
                         onClick={() => {
                             navigator.clipboard.writeText(
-                                "0.000000000000001"
+                                minimalBet
                             );
-                            set_msgValue("0.000000000000001")
+                            set_msgValue(minimalBet)
 
                         }}
                     >
                         {" "}
                         Minimal Bet:{" "}
-                        {ethers.utils.formatEther(1000)} ETH
+                        {minimalBet} ETH
                     </h2>
                 </div>
 

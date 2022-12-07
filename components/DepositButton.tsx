@@ -88,7 +88,7 @@ function DepositButton() {
                     id="deposit"
                     type="number"
                     placeholder="Deposit amount (ETH)"
-                    minlength="1"
+                    minLength="1"
                     // value={depositValue}
                     onChange={onChange}
                 />

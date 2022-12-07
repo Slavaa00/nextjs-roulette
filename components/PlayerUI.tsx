@@ -47,16 +47,16 @@ function PlayerUI() {
 
     }, [overallLiquidity, account, allPlayersWinnings])
 
-    useEffect(() => {
-        if (account) {
+    // useEffect(() => {
+    //     if (account) {
 
-            localStorage.setItem("betsSum", "0");
+    //         localStorage.setItem("betsSum", "0");
 
 
-        }
+    //     }
         
 
-    }, [account])
+    // }, [account])
 
    
    

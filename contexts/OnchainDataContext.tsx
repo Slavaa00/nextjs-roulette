@@ -51,6 +51,9 @@ const betTypesArr = [
 
 function OnchainDataContext({ children }: Props) {
     const owner = "0x941B1003Ecfa954F2ED01B94cF5197fa0748F6f9";
+    const startGameValue = "0.000000001";
+    const minimalBet = "0.000000000000001";
+    const maximumBet = "0.01";
 
     const { chainId: chainIdHex, isWeb3Enabled, Moralis, account } = useMoralis()
 
@@ -251,7 +254,10 @@ function OnchainDataContext({ children }: Props) {
                 confetti, 
                 setConfetti,
                 betsSum, 
-                setBetsSum
+                setBetsSum,
+                startGameValue,
+                minimalBet,
+                maximumBet
                 
             }}
         >

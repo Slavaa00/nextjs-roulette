@@ -106,9 +106,9 @@ function BetType() {
     return (
         <>
             <div className="flex flex-col justify-center items-center mt-3 pl-2">
-                <p className="text-2xl font-semibold text-center">Pick Bet Type 
-                <p className="mt-1"> Current: <span className="text-[#ff0062]">{_betTypeForUI}</span></p>
-                </p> 
+                <p className="text-2xl font-semibold text-center">Pick Bet Type</p> 
+                <p className="mt-1 text-2xl font-semibold text-center"> Current: <span className="text-[#ff0062]">{_betTypeForUI}</span></p>
+                 
                 <div className={styles.div}>
                 {betTypesArr.map(function (betType) {
                     return (

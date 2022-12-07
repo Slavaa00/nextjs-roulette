@@ -67,7 +67,7 @@ export default function RouletteEntrance() {
     return (
         <>
             <div className="flex ">
-                <div className="flex h-screen w-1/2 flex-col items-center justify-start border-2 border-green-400">
+                <div className="flex h-screen w-1/2 flex-col items-center justify-start  ">
                     <p className="mb-2 text-xl font-semibold">
                         Privet^_^)
                     </p>
@@ -90,10 +90,10 @@ export default function RouletteEntrance() {
                         </button>
                     )}
                 </div>
-                <div className="flex h-screen w-[515px] flex-col items-center justify-start border-2 border-red-400">
+                <div className="flex h-screen w-[515px] flex-col items-center justify-start  ">
                     <Field />
                 </div>
-                <div className="flex h-screen w-1/2 flex-col items-center justify-start border-2 border-blue-400">
+                <div className="flex h-screen w-1/2 flex-col items-center justify-start ">
                     <PlayerUI />
                 </div>
             </div>

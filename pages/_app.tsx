@@ -6,6 +6,7 @@ import { MoralisProvider } from "react-moralis"
 import { NotificationProvider } from "@web3uikit/core"
 import OnchainDataContext from "../contexts/OnchainDataContext"
 import { MetaMaskProvider } from "metamask-react";
+// import { StyledEngineProvider } from '@mui/material/styles';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -23,6 +24,7 @@ const [showChild, setShowChild] = useState(false);
     return <></>;
   } else {
     return (
+      // <StyledEngineProvider injectFirst>
         <MoralisProvider initializeOnMount={false}>
             <NotificationProvider>
                 <OnchainDataContext>
@@ -32,6 +34,7 @@ const [showChild, setShowChild] = useState(false);
                 </OnchainDataContext>
             </NotificationProvider>
         </MoralisProvider>
+        //</StyledEngineProvider>
         )
     }
 }

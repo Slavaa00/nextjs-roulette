@@ -43,10 +43,10 @@ function CreateBetButton() {
             _betType: _betType,
             _numbers: _numbers,
         },
-        msgValue: (msgValue ? ethers.utils.parseUnits(msgValue, "ether") : "0")
+        msgValue: (msgValue ? ethers.utils.parseUnits(Number(msgValue).toFixed(15), "ether") : "0")
     })
 
- 
+ console.log(Number(localStorage.getItem("betsSum")).toFixed(20))
     return (
         <>
             <div className="flex flex-col mt-3">
@@ -64,7 +64,7 @@ function CreateBetButton() {
 
                                     // setTimeout(async () => {
                                     //     await updateUI()
-                                    // }, 110000)
+                                    // }, 120000)
                                 },
                             });
 

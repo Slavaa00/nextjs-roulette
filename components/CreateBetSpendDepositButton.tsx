@@ -40,7 +40,7 @@ function CreateBetSpendDepositButton() {
         params: {
             _betType: _betType,
             _numbers: _numbers,
-            _amount: (msgValue ? ethers.utils.parseUnits(msgValue, "ether") : "0")
+            _amount: (msgValue ? ethers.utils.parseUnits(Number(msgValue).toFixed(15), "ether") : "0")
         },
        
     })
@@ -55,9 +55,10 @@ function CreateBetSpendDepositButton() {
                 handleSuccess(tx as ContractTransaction);
                 // setBetsSum((betsSum) => (Number(betsSum) + Number(msgValue)).toString());
                 localStorage.setItem("betsSum", (Number(localStorage.getItem("betsSum")) + Number(msgValue)).toString());
+
                 // setTimeout(async () => {
                 //     await updateUI()
-                // }, 110000)
+                // }, 120000)
             },
         });
 
