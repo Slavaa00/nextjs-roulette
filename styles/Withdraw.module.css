@@ -1,0 +1,26 @@
+.githubIcon {
+    height: 100px;
+    width: 100px;
+    display: inline;
+    position: absolute;
+    right: 0px;
+    bottom: -391px;
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid black;
+    border-left: 100px solid transparent;
+   
+}
+.githubIconPng {
+    height: 40px;
+    width: 40px;
+    display: inline;
+    position: absolute;
+    right: 20px;
+    bottom: -90px;
+  background: no-repeat url("../public/github-icon.png");
+  background-size: 40px 40px;
+  z-index: 10;
+  rotate: 135deg;
+   cursor: pointer;
+}

@@ -44,7 +44,31 @@ function Numbers() {
         pickedNumbers
     }: any = useContext(AppContext)
 
-
+    function colorizeNumbers() {
+        if (pickedNumbers == 151) {
+            return "text-black"
+        }
+        if (pickedNumbers == 152) {
+            return "text-red-600"
+        }
+        if (pickedNumbers == 1 ) {
+            return "text-[#22c55e]"
+       } else {
+        if ((pickedNumbers < 12 || (pickedNumbers > 19 && pickedNumbers < 30)) && (pickedNumbers % 2 == 1)) {
+            return "text-black"
+        } else if ((pickedNumbers > 29 || (pickedNumbers > 11 && pickedNumbers < 20)) && (pickedNumbers % 2 == 0)) {
+            return "text-black"
+        } 
+        
+        else if ((pickedNumbers < 12 || (pickedNumbers > 19 && pickedNumbers < 31)) && (pickedNumbers % 2 == 0)) {
+            return "text-[#dc2626]"
+        } else if ((pickedNumbers > 30 || (pickedNumbers > 11 && pickedNumbers < 20)) && (pickedNumbers % 2 == 1)) {
+            return "text-[#dc2626]"
+        } 
+       }
+      
+        return "text-[#00e8e8]"
+ }
   
 
 
@@ -78,7 +102,7 @@ function Numbers() {
         <>
              <div className="flex flex-col justify-center items-center mt-3 pb-10">
                 <p className="text-2xl font-semibold ">Pick Number(s)</p> 
-             <p className="text-2xl font-semibold mt-1 px-2">Current: <span className="text-[#00e8e8]">{_numbersForUI < 5 ? (bets.find(({id}) => id == pickedNumbers)?._numbers.join("-")) : (bets.find(({id}) => id == pickedNumbers)?.description)}</span></p> 
+             <p className="text-2xl font-semibold mt-1 px-2">Current: <span className={` ${colorizeNumbers()} font-bold`}>{_numbersForUI < 5 ? (bets.find(({id}) => id == pickedNumbers)?._numbers.join("-")) : (bets.find(({id}) => id == pickedNumbers)?.description)}</span></p> 
                 <div className="">
                 {bets.filter(function({_betType}) {
                     return _betType == _numbersForUI

@@ -86,7 +86,7 @@ function BetAmountInput() {
           defaultValue={Number(maximumBet)}
           min={0.001}
           max={Number(maximumBet)}
-          step={0.0000001}
+          step={0.00001}
           classes={{ active: 'shadow-none' }}
           slotProps={{ thumb: { className: 'hover:shadow-none' } }}
         /></ThemeProvider></div></div>

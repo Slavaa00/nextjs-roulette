@@ -3,7 +3,6 @@
     width: 450px;
     background: no-repeat url("../public/roulette-field.png");
     background-size: cover;
-    border: 2px solid black;
     display: grid;
     padding-left: 26px;
     padding-top: 26px;
@@ -28,199 +27,653 @@
       ". . LeftColumn MiddleColumn RightColumn";
   }
  
-  .Zero { grid-area: Zero; border: 1px solid red;}
+  .Zero { grid-area: Zero;   }
 
   .Zero:hover { background: white; opacity: 0.5; cursor: pointer;}
   
     
-    .One { grid-area: One; border: 1px solid red;}
+    .One { grid-area: One;   }
   .One:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Two { grid-area: Two; border: 1px solid red;}
+  .Two { grid-area: Two;   }
   .Two:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Three { grid-area: Three; border: 1px solid red;}
+  .Three { grid-area: Three;   }
   .Three:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Four { grid-area: Four; border: 1px solid red;}
+  .Four { grid-area: Four;   }
   .Four:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Five { grid-area: Five; border: 1px solid red;}
+  .Five { grid-area: Five;   }
   .Five:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Six { grid-area: Six; border: 1px solid red;}
+  .Six { grid-area: Six;   }
   .Six:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Seven { grid-area: Seven; border: 1px solid red;}
+  .Seven { grid-area: Seven;   }
   .Seven:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Eight { grid-area: Eight; border: 1px solid red;}
+  .Eight { grid-area: Eight;   }
   .Eight:hover { background: white; opacity: 0.5; cursor: pointer;}
 
 
-  .Nine { grid-area: Nine; border: 1px solid red;}
+  .Nine { grid-area: Nine;   }
   .Nine:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Ten { grid-area: Ten; border: 1px solid red;}
+  .Ten { grid-area: Ten;   }
   .Ten:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Eleven { grid-area: Eleven; border: 1px solid red;}
+  .Eleven { grid-area: Eleven;   }
   .Eleven:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Twelve { grid-area: Twelve; border: 1px solid red;}
+  .Twelve { grid-area: Twelve;   }
   .Twelve:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Thirteen { grid-area: Thirteen; border: 1px solid red;}
+  .Thirteen { grid-area: Thirteen;   }
   .Thirteen:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Fourteen { grid-area: Fourteen; border: 1px solid red;}
+  .Fourteen { grid-area: Fourteen;   }
   .Fourteen:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Fifteen { grid-area: Fifteen; border: 1px solid red;}
+  .Fifteen { grid-area: Fifteen;   }
   .Fifteen:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Sixteen { grid-area: Sixteen; border:1px solid red;}
+  .Sixteen { grid-area: Sixteen;  }
   .Sixteen:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Seventeen { grid-area: Seventeen; border:1px solid red;}
+  .Seventeen { grid-area: Seventeen;  }
   .Seventeen:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Eighteen { grid-area: Eighteen; border: 1px solid red;}
+  .Eighteen { grid-area: Eighteen;   }
   .Eighteen:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Nineteen { grid-area: Nineteen; border: 1px solid red;}
+  .Nineteen { grid-area: Nineteen;   }
   .Nineteen:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Twenty { grid-area: Twenty; border: 1px solid red;}
+  .Twenty { grid-area: Twenty;   }
   .Twenty:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .TwentyOne { grid-area: TwentyOne; border:1px solid red;}
+  .TwentyOne { grid-area: TwentyOne;  }
   .TwentyOne:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .TwentyTwo { grid-area: TwentyTwo; border: 1px solid red;}
+  .TwentyTwo { grid-area: TwentyTwo;   }
   .TwentyTwo:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .TwentyThree { grid-area: TwentyThree; border: 1px solid red;}
+  .TwentyThree { grid-area: TwentyThree;   }
   .TwentyThree:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .TwentyFour { grid-area: TwentyFour; border: 1px solid red;}
+  .TwentyFour { grid-area: TwentyFour;   }
   .TwentyFour:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .TwentyFive { grid-area: TwentyFive; border:1px solid red;}
+  .TwentyFive { grid-area: TwentyFive;  }
   .TwentyFive:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .TwentySix { grid-area: TwentySix; border:1px solid red;}
+  .TwentySix { grid-area: TwentySix;  }
   .TwentySix:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .TwentySeven { grid-area: TwentySeven; border:1px solid red;}
+  .TwentySeven { grid-area: TwentySeven;  }
   .TwentySeven:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .TwentyEight { grid-area: TwentyEight; border:1px solid red;}
+  .TwentyEight { grid-area: TwentyEight;  }
   .TwentyEight:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .TwentyNine { grid-area: TwentyNine; border:1px solid red;}
+  .TwentyNine { grid-area: TwentyNine;  }
   .TwentyNine:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Thirty { grid-area: Thirty; border:1px solid red; }
+  .Thirty { grid-area: Thirty;   }
   .Thirty:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .ThirtyOne { grid-area: ThirtyOne; border:1px solid red;}
+  .ThirtyOne { grid-area: ThirtyOne;  }
   .ThirtyOne:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .ThirtyTwo { grid-area: ThirtyTwo; border:1px solid red;}
+  .ThirtyTwo { grid-area: ThirtyTwo;  }
   .ThirtyTwo:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .ThirtyThree { grid-area: ThirtyThree; border:1px solid red;}
+  .ThirtyThree { grid-area: ThirtyThree;  }
   .ThirtyThree:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .ThirtyFour { grid-area: ThirtyFour; border:1px solid red;}
+  .ThirtyFour { grid-area: ThirtyFour;  }
   .ThirtyFour:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .ThirtyFive { grid-area: ThirtyFive; border:1px solid red;}
+  .ThirtyFive { grid-area: ThirtyFive;  }
   .ThirtyFive:hover { background: white; opacity: 0.5; cursor: pointer;}
   
-  .ThirtySix { grid-area: ThirtySix; border:1px solid red;}
+  .ThirtySix { grid-area: ThirtySix;  }
   .ThirtySix:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .LeftColumn { grid-area: LeftColumn; border:1px solid red;}
+  .LeftColumn { grid-area: LeftColumn;  }
   .LeftColumn:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .MiddleColumn { grid-area: MiddleColumn; border:1px solid red;}
+  .MiddleColumn { grid-area: MiddleColumn;  }
   .MiddleColumn:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .RightColumn { grid-area: RightColumn; border:1px solid red;}
+  .RightColumn { grid-area: RightColumn;  }
   .RightColumn:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .FirstDozen { grid-area: FirstDozen; border:1px solid red;}
+  .FirstDozen { grid-area: FirstDozen;  }
   .FirstDozen:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .SecondDozen { grid-area: SecondDozen; border:1px solid red;}
+  .SecondDozen { grid-area: SecondDozen;  }
   .SecondDozen:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .ThirdDozen { grid-area: ThirdDozen; border:1px solid red;}
+  .ThirdDozen { grid-area: ThirdDozen;  }
   .ThirdDozen:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .HighEighteen { grid-area: HighEighteen; border:1px solid red;}
+  .HighEighteen { grid-area: HighEighteen;  }
   .HighEighteen:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Odd { grid-area: Odd; border:1px solid red;}
+  .Odd { grid-area: Odd;  }
   .Odd:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Black { grid-area: Black; border:1px solid red;}
+  .Black { grid-area: Black;  }
   .Black:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Red { grid-area: Red; border:1px solid red;}
+  .Red { grid-area: Red;  }
   .Red:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .Even { grid-area: Even; border:1px solid red;}
+  .Even { grid-area: Even;  }
   .Even:hover { background: white; opacity: 0.5; cursor: pointer;}
 
   
-  .LowEighteen { grid-area: LowEighteen; border:1px solid red;}
+  .LowEighteen { grid-area: LowEighteen;  }
   .LowEighteen:hover { background: white; opacity: 0.5; cursor: pointer;}
 
+
+  .containerThrees {  
+    height: 900px;
+    width: 450px;
+    background: no-repeat url("../public/roulette-field.png");
+    background-size: cover;
+    display: grid;
+    padding-left: 26px;
+    padding-top: 26px;
+    grid-template-columns: 79px 79px 79px 79px 79px;
+    grid-template-rows: 61px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . LeftZeroThree Zero RightZeroThree"       
+      "LowEighteen FirstDozen FirstThree FirstThree FirstThree"
+      "LowEighteen FirstDozen SecondThree SecondThree SecondThree"
+      "Even FirstDozen ThirdThree ThirdThree ThirdThree"
+      "Even FirstDozen FourthThree FourthThree FourthThree"
+      "Red SecondDozen FifthThree FifthThree FifthThree"
+      "Red SecondDozen SixthThree SixthThree SixthThree"
+      "Black SecondDozen SeventhThree SeventhThree SeventhThree"
+      "Black SecondDozen EighthThree EighthThree EighthThree"
+      "Odd ThirdDozen NinthThree NinthThree NinthThree"
+      "Odd ThirdDozen TenthThree TenthThree TenthThree"
+      "HighEighteen ThirdDozen EleventhThree EleventhThree EleventhThree"
+      "HighEighteen ThirdDozen TwelfthThree TwelfthThree TwelfthThree"
+      ". . LeftColumn MiddleColumn RightColumn";
+  }
   
+  .FirstThree { grid-area: FirstThree;  }
+  .FirstThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .SecondThree { grid-area: SecondThree;  }
+  .SecondThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .ThirdThree { grid-area: ThirdThree;  }
+  .ThirdThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .FourthThree { grid-area: FourthThree;  }
+  .FourthThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .FifthThree { grid-area: FifthThree;  }
+  .FifthThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .SixthThree { grid-area: SixthThree;  }
+  .SixthThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .SeventhThree { grid-area: SeventhThree;  }
+  .SeventhThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .EighthThree { grid-area: EighthThree;  }
+  .EighthThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .NinthThree { grid-area: NinthThree;  }
+  .NinthThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .TenthThree { grid-area: TenthThree;  }
+  .TenthThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .EleventhThree { grid-area: EleventhThree;  }
+  .EleventhThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .TwelfthThree { grid-area: TwelfthThree;  }
+  .TwelfthThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .LeftZeroThree {grid-area: LeftZeroThree;   cursor: pointer; }
+  .LeftZeroThree:hover { background: white; opacity: 0.7;}
+.LeftZeroThree:hover:after { content: "0-1-2"; 
+      cursor: pointer;   opacity: 1; font-size:30px;   color: black; margin-left: 2px; margin-top: 6px;} 
+
+  .RightZeroThree {grid-area: RightZeroThree;   cursor: pointer;}
+  .RightZeroThree:hover { background: white; opacity: 0.7;}
+
+  .RightZeroThree:hover:after { content: "0-2-3"; 
+    cursor: pointer;   opacity: 1; font-size:30px;   color: #black; margin-left: 2px; margin-top: 6px;} 
+
+
+
+
+
+    .containerSixes {  
+    height: 900px;
+    width: 450px;
+    background: no-repeat url("../public/roulette-field.png");
+    background-size: cover;
+    display: grid;
+    padding-left: 26px;
+    padding-top: 26px;
+    grid-template-columns: 79px 79px 79px 79px 79px;
+    grid-template-rows: 61px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . Zero Zero Zero"       
+      "LowEighteen FirstDozen FirstSix FirstSix FirstSix"
+      "LowEighteen FirstDozen FirstSix FirstSix FirstSix"
+      "Even FirstDozen SecondSix SecondSix SecondSix"
+      "Even FirstDozen SecondSix SecondSix SecondSix"
+      "Red SecondDozen ThirdSix ThirdSix ThirdSix"
+      "Red SecondDozen ThirdSix ThirdSix ThirdSix"
+      "Black SecondDozen FourthSix FourthSix FourthSix"
+      "Black SecondDozen FourthSix FourthSix FourthSix"
+      "Odd ThirdDozen FifthSix FifthSix FifthSix"
+      "Odd ThirdDozen FifthSix FifthSix FifthSix"
+      "HighEighteen ThirdDozen SixthSix SixthSix SixthSix"
+      "HighEighteen ThirdDozen SixthSix SixthSix SixthSix"
+      ". . LeftColumn MiddleColumn RightColumn";
+  }
+
+  
+
+  .FirstSix { grid-area: FirstSix ;  }
+  .FirstSix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .SecondSix { grid-area: SecondSix ;  }
+  .SecondSix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .ThirdSix { grid-area: ThirdSix ;  }
+  .ThirdSix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .FourthSix { grid-area: FourthSix ;  }
+  .FourthSix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .FifthSix { grid-area: FifthSix ;  }
+  .FifthSix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+  .SixthSix { grid-area: SixthSix ;  }
+  .SixthSix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+
+
+  .containerFours {  
+    height: 900px;
+    width: 450px;
+    background: no-repeat url("../public/roulette-field.png");
+    background-size: cover;
+    display: grid;
+    padding-left: 26px;
+    padding-top: 26px;
+    grid-template-columns: 79px 79px 79px 79px 79px;
+    grid-template-rows: 61px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    
+  }
+
+.LeftColumnFours { grid-area: 14 / 3 / 15 / 4;  }
+.LeftColumnFours:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.MiddleColumnFours { grid-area: 14 / 4 / 15 / 5;  }
+.MiddleColumnFours:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.RightColumnFours { grid-area: 14 / 5 / 15 / 6;  }
+.RightColumnFours:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.FirstDozenFours { grid-area: 2 / 2 / 6 / 3;  }
+.FirstDozenFours:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.SecondDozenFours { grid-area: 6 / 2 / 10 / 3;  }
+.SecondDozenFours:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirdDozenFours { grid-area: 10 / 2 / 14 / 3;  }
+.ThirdDozenFours:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.HighEighteenFours { grid-area: 12 / 1 / 14 / 2;  }
+.HighEighteenFours:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.OddFours { grid-area: 10 / 1 / 12 / 2;  }
+.OddFours:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.BlackFours { grid-area: 8 / 1 / 10 / 2;  }
+.BlackFours:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.RedFours { grid-area: 6 / 1 / 8 / 2;  }
+.RedFours:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.EvenFours { grid-area: 4 / 1 / 6 / 2;   }
+.EvenFours:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.LowEighteenFours { grid-area: 2 / 1 / 4 / 2;  }
+.LowEighteenFours:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+
+.ZeroOneTwoThree { grid-area: 1 / 3 / 2 / 6;  }
+.ZeroOneTwoThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.OneTwoFourFive { grid-area: 2 / 3 / 4 / 5;  }
+.OneTwoFourFive:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwoThreeFiveSix { grid-area: 2 / 4 / 4 / 6;  }
+.TwoThreeFiveSix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.FourFiveSevenEight { grid-area: 3 / 3 / 5 / 5;  }
+.FourFiveSevenEight:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.FiveSixEightNine { grid-area: 3 / 4 / 5 / 6;  }
+.FiveSixEightNine:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.SevenEightTenEleven { grid-area: 4 / 3 / 6 / 5;  }
+.SevenEightTenEleven:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.EightNineElevenTwelve { grid-area: 4 / 4 / 6 / 6;  }
+.EightNineElevenTwelve:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TenElevenThirteenFourteen { grid-area: 5 / 3 / 7 / 5;  }
+.TenElevenThirteenFourteen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ElevenTwelveFourteenFifteen { grid-area: 5 / 4 / 7 / 6;  }
+.ElevenTwelveFourteenFifteen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirteenFourteenSixteenSeventeen { grid-area: 6 / 3 / 8 / 5;  }
+.ThirteenFourteenSixteenSeventeen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.FourteenFifteenSeventeenEighteen { grid-area: 6 / 4 / 8 / 6;  }
+.FourteenFifteenSeventeenEighteen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.SixteenSeventeenNineteenTwenty { grid-area: 7 / 3 / 9 / 5;  }
+.SixteenSeventeenNineteenTwenty:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.SeventeenEighteenTwentyTwentyOne { grid-area: 7 / 4 / 9 / 6;  }
+.SeventeenEighteenTwentyTwentyOne:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.NineteenTwentyTwentyTwoTwentyThree { grid-area: 8 / 3 / 10 / 5;  }
+.NineteenTwentyTwentyTwoTwentyThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyTwentyOneTwentyThreeTwentyFour { grid-area: 8 / 4 / 10 / 6;  }
+.TwentyTwentyOneTwentyThreeTwentyFour:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyTwoTwentyThreeTwentyFiveTwentySix { grid-area: 9 / 3 / 11 / 5;  }
+.TwentyTwoTwentyThreeTwentyFiveTwentySix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyThreeTwentyFourTwentySixTwentySeven { grid-area: 9 / 4 / 11 / 6;  }
+.TwentyThreeTwentyFourTwentySixTwentySeven:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyFiveTwentySixTwentyEightTwentyNine { grid-area: 10 / 3 / 12 / 5;  }
+.TwentyFiveTwentySixTwentyEightTwentyNine:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentySixTwentySevenTwentyNineThirty { grid-area: 10 / 4 / 12 / 6;  }
+.TwentySixTwentySevenTwentyNineThirty:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyEightTwentyNineThirtyOneThirtyTwo { grid-area: 11 / 3 / 13 / 5;  }
+.TwentyEightTwentyNineThirtyOneThirtyTwo:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyNineThirtyThirtyTwoThirtyThree { grid-area: 11 / 4 / 13 / 6;  }
+.TwentyNineThirtyThirtyTwoThirtyThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirtyOneThirtyTwoThirtyFourThirtyFive { grid-area: 12 / 3 / 14 / 5;  }
+.ThirtyOneThirtyTwoThirtyFourThirtyFive:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirtyTwoThirtyThreeThirtyFiveThirtySix { grid-area: 12 / 4 / 14 / 6;  }
+.ThirtyTwoThirtyThreeThirtyFiveThirtySix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+
+
+.containerTwos {  
+  height: 900px;
+  width: 450px;
+  background: no-repeat url("../public/roulette-field.png");
+  background-size: cover;
+  display: grid;
+  padding-left: 26px;
+  padding-top: 26px;
+  grid-template-columns: 79px 79px 79px 79px 79px;
+  grid-template-rows: 61px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  
+}
+
+.ZeroOne { grid-area: 1 / 3 / 2 / 4;  }
+.ZeroOne:hover { background: white; opacity: 0.5; cursor: pointer;}
+.ZeroOne:hover:after { content: "0-1"; 
+  cursor: pointer;   opacity: 1; font-size:30px;   color: black; margin-left: 16px; margin-top: 16px;} 
+
+.ZeroTwo { grid-area: 1 / 4 / 2 / 5;  }
+.ZeroTwo:hover { background: white; opacity: 0.5; cursor: pointer;}
+.ZeroTwo:hover:after { content: "0-2"; 
+  cursor: pointer;   opacity: 1; font-size:30px;   color: black; margin-left: 16px; margin-top: 16px;} 
+
+.ZeroThree { grid-area: 1 / 5 / 2 / 6;  }
+.ZeroThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+.ZeroThree:hover:after { content: "0-3"; 
+  cursor: pointer;   opacity: 1; font-size:30px;   color: black; margin-left: 16px; margin-top: 16px;} 
+
+.OneTwo { grid-area: 2 / 3 / 3 / 5;  }
+.OneTwo:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwoThree { grid-area: 2 / 4 / 3 / 6;  }
+.TwoThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.FourFive { grid-area: 3 / 3 / 4 / 5;  }
+.FourFive:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.FiveSix { grid-area: 3 / 4 / 4 / 6;  }
+.FiveSix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.SevenEight { grid-area: 4 / 3 / 5 / 5;  }
+.SevenEight:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.EightNine { grid-area: 4 / 4 / 5 / 6;  }
+.EightNine:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TenEleven { grid-area: 5 / 3 / 6 / 5;  }
+.TenEleven:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ElevenTwelve { grid-area: 5 / 4 / 6 / 6;  }
+.ElevenTwelve:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirteenFourteen { grid-area: 6 / 3 / 7 / 5;  }
+.ThirteenFourteen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.FourteenFifteen { grid-area: 6 / 4 / 7 / 6;  }
+.FourteenFifteen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.SixteenSeventeen { grid-area: 7 / 3 / 8 / 5;  }
+.SixteenSeventeen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.SeventeenEighteen { grid-area: 7 / 4 / 8 / 6;  }
+.SeventeenEighteen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.NineteenTwenty { grid-area: 8 / 3 / 9 / 5;  }
+.NineteenTwenty:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyTwentyOne { grid-area: 8 / 4 / 9 / 6;  }
+.TwentyTwentyOne:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyTwoTwentyThree { grid-area: 9 / 3 / 10 / 5;  }
+.TwentyTwoTwentyThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyThreeTwentyFour { grid-area: 9 / 4 / 10 / 6;  }
+.TwentyThreeTwentyFour:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyFiveTwentySix { grid-area: 10 / 3 / 11 / 5;  }
+.TwentyFiveTwentySix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentySixTwentySeven { grid-area: 10 / 4 / 11 / 6;  }
+.TwentySixTwentySeven:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyEightTwentyNine { grid-area: 11 / 3 / 12 / 5;  }
+.TwentyEightTwentyNine:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyNineThirty { grid-area: 11 / 4 / 12 / 6;  }
+.TwentyNineThirty:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirtyOneThirtyTwo { grid-area: 12 / 3 / 13 / 5;  }
+.ThirtyOneThirtyTwo:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirtyTwoThirtyThree { grid-area: 12 / 4 / 13 / 6;  }
+.ZeroThirtyTwoThirtyThreeOne:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirtyFourThirtyFive { grid-area: 13 / 3 / 14 / 5;  }
+.ThirtyFourThirtyFive:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirtyFiveThirtySix { grid-area: 13 / 4 / 14 / 6;  }
+.ThirtyFiveThirtySix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.OneFour { grid-area: 2 / 3 / 4 / 4;  }
+.OneFour:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwoFive { grid-area: 2 / 4 / 4 / 5;  }
+.TwoFive:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThreeSix { grid-area: 2 / 5 / 4 / 6;  }
+.ThreeSix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.FourSeven { grid-area: 3 / 3 / 5 / 4;  }
+.FourSeven:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.FiveEight { grid-area: 3 / 4 / 5 / 5;  }
+.FiveEight:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.SixNine { grid-area: 3 / 5 / 5 / 6;  }
+.SixNine:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.SevenTen { grid-area: 4 / 3 / 6 / 4;  }
+.SevenTen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.EightEleven { grid-area: 4 / 4 / 6 / 5;  }
+.EightEleven:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.NineTwelve { grid-area: 4 / 5 / 6 / 6;  }
+.NineTwelve:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TenThirteen { grid-area: 5 / 3 / 7 / 4;  }
+.TenThirteen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ElevenFourteen { grid-area: 5 / 4 / 7 / 5;  }
+.ElevenFourteen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwelveFifteen { grid-area: 5 / 5 / 7 / 6;  }
+.TwelveFifteen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirteenSixteen { grid-area: 6 / 3 / 8 / 4;  }
+.ThirteenSixteen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.FourteenSeventeen { grid-area: 6 / 4 / 8 / 5;  }
+.FourteenSeventeen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.FifteenEighteen { grid-area: 6 / 5 / 8 / 6;  }
+.FifteenEighteen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.SixteenNineteen { grid-area: 7 / 3 / 9 / 4;  }
+.SixteenNineteen:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.SeventeenTwenty { grid-area: 7 / 4 / 9 / 5;  }
+.SeventeenTwenty:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.EighteenTwentyOne { grid-area: 7 / 5 / 9 / 6;  }
+.EighteenTwentyOne:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.NineteenTwentyTwo { grid-area: 8 / 3 / 10 / 4;  }
+.NineteenTwentyTwo:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyTwentyThree { grid-area: 8 / 4 / 10 / 5;  }
+.TwentyTwentyThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyOneTwentyFour { grid-area: 8 / 5 / 10 / 6;  }
+.TwentyOneTwentyFour:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyTwoTwentyFive { grid-area: 9 / 3 / 11 / 4;  }
+.TwentyTwoTwentyFive:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyThreeTwentySix { grid-area: 9 / 4 / 11 / 5;  }
+.TwentyThreeTwentySix:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyFourTwentySeven { grid-area: 9 / 5 / 11 / 6;  }
+.TwentyFourTwentySeven:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyFiveTwentyEight { grid-area: 10 / 3 / 12 / 4;  }
+.TwentyFiveTwentyEight:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentySixTwentyNine { grid-area: 10 / 4 / 12 / 5;  }
+.TwentySixTwentyNine:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentySevenThirty { grid-area: 10 / 5 / 12 / 6;  }
+.TwentySevenThirty:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyEightThirtyOne { grid-area: 11 / 3 / 13 / 4;  }
+.TwentyEightThirtyOne:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.TwentyNineThirtyTwo { grid-area: 11 / 4 / 13 / 5;  }
+.TwentyNineThirtyTwo:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirtyThirtyThree { grid-area: 11 / 5 / 13 / 6;  }
+.ThirtyThirtyThree:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirtyOneThirtyFour { grid-area: 12 / 3 / 14 / 4;  }
+.ThirtyOneThirtyFour:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirtyTwoThirtyFive { grid-area: 12 / 4 / 14 / 5;  }
+.ThirtyTwoThirtyFive:hover { background: white; opacity: 0.5; cursor: pointer;}
+
+.ThirtyThreeThirtySix { grid-area: 12 / 5 / 14 / 6;  }
+.ThirtyThreeThirtySix:hover { background: white; opacity: 0.5; cursor: pointer;}

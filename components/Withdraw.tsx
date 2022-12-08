@@ -3,6 +3,9 @@ import { AppContext } from "../contexts/OnchainDataContext"
 import { BigNumber, ethers, ContractTransaction } from "ethers"
 import { useWeb3Contract, useMoralis } from "react-moralis"
 
+import styles from "../styles/Withdraw.module.css"
+
+
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -74,7 +77,7 @@ function Withdraw() {
               <div className="w-full mt-3 text-xl font-semibold ">If you are hiring Solidity developers, you can contact me by Telegram or Email:
 
 
-              <div className="flex mt-4  text-center"> 
+              <div className="flex mt-4 pt-3 text-center"> 
 
              <div className="flex">
                 <div>
@@ -82,6 +85,7 @@ function Withdraw() {
                 
           <Image
             src="/telegram-icon.svg"
+            alt="Telegram Icon"
             width={35}
             height={35}
             
@@ -103,6 +107,7 @@ function Withdraw() {
                 
           <Image
             src="/yandex-mail-icon.svg"
+            alt="Yandex Mail Icon"
             width={35}
             height={35}
             
@@ -120,17 +125,21 @@ function Withdraw() {
 </div>
                 </div>
 
-             <div className="mt-12 ">GitHub repositories with the Code source:
+             <div className="mt-6 ">GitHub repositories with the Code source:
                 
 
              </div>
-             <div className="mt-4">Smart Contract (BackEnd):
-             <Link className="ml-3 underline hover:text-[#0000EE] active:text-[#FF0000]" href="https://github.com/Slavaa00/roulette">https://github.com/Slavaa00/roulette</Link>
-             </div>
-             <div className="mt-4 mb-2">FrontEnd:
-                <Link className="ml-3 underline hover:text-[#0000EE] active:text-[#FF0000]" href="https://github.com/Slavaa00/nextjs-roulette">https://github.com/Slavaa00/nextjs-roulette</Link>
-             </div>
+             <div className="mt-4 flex justify-between"><div>Smart Contract (BackEnd):
+             <Link className="ml-3 underline hover:text-[#0000EE] active:text-[#FF0000]" href="https://github.com/Slavaa00/roulette">https://github.com/Slavaa00/roulette</Link></div>
+            
+            <Link className="" href="https://github.com/Slavaa00"><div className={styles.githubIcon}><div className={styles.githubIconPng}></div></div></Link>
+            
 
+             </div>
+             <div className="mt-4 mb-2 ">FrontEnd:
+                <Link className="ml-3 underline hover:text-[#0000EE] active:text-[#FF0000]" href="https://github.com/Slavaa00/nextjs-roulette">https://github.com/Slavaa00/nextjs-roulette</Link>
+
+             </div>
               </div>
 
 

@@ -322,8 +322,9 @@ function PlayerBets() {
                         ? respond
                               .filter(function (bet) {
                                   return (
-                                      bet[0].toLowerCase() ==
-                                      account.toLowerCase()
+                                    bet[0].toLowerCase() ==
+                                        account?.toLowerCase()
+                                      
                                   )
                               })
                               .map(function (item) {
