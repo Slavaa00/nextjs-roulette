@@ -51,9 +51,9 @@ function Numbers() {
         if (pickedNumbers == 152) {
             return "text-red-600"
         }
-        if (pickedNumbers == 1 ) {
+        if (pickedNumbers == 1 || pickedNumbers == 134 || (pickedNumbers > 109 && pickedNumbers < 112) || (pickedNumbers > 94 && pickedNumbers< 98 )) {
             return "text-[#22c55e]"
-       } else {
+        } else {
         if ((pickedNumbers < 12 || (pickedNumbers > 19 && pickedNumbers < 30)) && (pickedNumbers % 2 == 1)) {
             return "text-black"
         } else if ((pickedNumbers > 29 || (pickedNumbers > 11 && pickedNumbers < 20)) && (pickedNumbers % 2 == 0)) {
