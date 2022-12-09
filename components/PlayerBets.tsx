@@ -21,6 +21,7 @@ function PlayerBets() {
 
     const [fireGratzDiv, setFireGratzDiv] = useState(false)
     const [fireSadDiv, setFireSadDiv] = useState(false)
+    // const [fireNeutralDiv, setFireNeutralDiv] = useState(false)
 
     const [playerUIBalance, setPlayerUIBalance] =
         useState("0")
@@ -86,7 +87,22 @@ function PlayerBets() {
         allPlayersWinnings,
         currentCasinoBalance,
     ])
+    useEffect(() => {
+        console.log((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))))
 
+    }, [
+        
+        playerBalance
+        
+    ])
+    useEffect(() => {
+        console.log((Number(playerUIBalance) ))
+
+    }, [
+        
+        betsSum
+        
+    ])
     // useEffect(() => {
        
     //     if (
@@ -179,19 +195,20 @@ function PlayerBets() {
     //     allPlayersWinnings,
     //     currentCasinoBalance,
     // ])
+    // ОТОБРАЗИТЬ ТУ ФИКСД
     useEffect(() => {
         // console.log(allPlayersWinnings > allPlayersWinningsUI)
-
         setPlayerUIBalance(playerBalance)
         setAllPlayersWinningsUI(allPlayersWinnings)
         setCurrentCasinoUIBalance(currentCasinoBalance)
         // console.log(playerBalance, playerUIBalance)
         if (allPlayersWinnings > allPlayersWinningsUI || currentCasinoBalance > currentCasinoUIBalance) 
             {
-        // console.log(playerUIBalance)
-
-                if (confetti  &&  (Number(playerBalance) > (Number(playerUIBalance) + Number(betsSum)))) {
-                                         setWinAmount((Number(playerBalance) - (Number(playerUIBalance) + Number(betsSum))).toString())
+        //  console.log((Number(playerBalance) , (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))))
+        // console.log( ((Number(playerBalance) -  ( Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))).toString()) )
+// + (ethers.utils.parseUnits(betsSum, "ether").toString())
+                if (confetti  &&  (Number(playerBalance) > (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))))) {
+                                         setWinAmount((Number(playerBalance) -  ( Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))).toString())
                                         setFireConfetti(true)
                                         setTimeout(() => {
                                             setFireConfetti(false)
@@ -206,7 +223,7 @@ function PlayerBets() {
 
 
                 }
-                if (confetti  &&  (Number(playerBalance) <= (Number(playerUIBalance) + Number(betsSum)))) {
+                if (confetti  &&  (Number(playerBalance) <= (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))))) {
                         setFireSadDiv(true)
         
                             setTimeout(() => {
@@ -216,8 +233,19 @@ function PlayerBets() {
                         localStorage.setItem("betsSum", "0");
 
                 }
+                // if (confetti  &&  (Number(playerBalance) == (Number(playerUIBalance) + Number(betsSum)))) {
+                //         setFireNeutralDiv(true)
+        
+                //             setTimeout(() => {
+                //                 setFireNeutralDiv(false)
+                //             }, 10000)
+                //             // setBetsSum("0")
+                //         localStorage.setItem("betsSum", "0");
+
+                // }
          }
         
+         
     }, [
         playerBalance, allPlayersWinnings, currentCasinoBalance
       
@@ -386,8 +414,8 @@ function PlayerBets() {
                             <div className="text-center text-4xl ">
                                 <p>
                                     Unfortunately, you
-                                    didn't win anything
-                                    after the last spin :(
+                                    haven't won anything
+                                    after last Roulette spin :(
                                 </p>{" "}
                                 <p className="mt-6">
                                     But you will definitely
@@ -398,6 +426,15 @@ function PlayerBets() {
                                 </p>
                             </div>
                         ) : null}
+
+                        {/* {fireNeutralDiv ? (
+                            <div className="text-center text-4xl ">
+                                <p>
+                                    Your Current Balance didn't change after last Roulette spin.
+                                </p>{" "}
+                                
+                            </div>
+                        ) : null} */}
                     </div>
                 </div> 
                  <div className="w-full pl-8 font-bold ">Total Bet Amount: <span className={`${Number(localStorage.getItem("betsSum")).toFixed(20) >= Number(startGameValue) ? ("text-[#22c55e]") : ("text-[#dc2626]") } `}>{Number(localStorage.getItem("betsSum")).toFixed(17).replace(/0*$/, "")}</span></div>                       

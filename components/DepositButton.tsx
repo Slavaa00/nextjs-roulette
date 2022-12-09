@@ -84,7 +84,7 @@ function DepositButton() {
                 </label>
                 <input
                     ref={input}
-                    className="[appearance:none] text-black text-lg h-14 w-52 border border-green-500 rounded-md pl-2 font-medium outline-green-500"
+                    className="[appearance:none] text-black text-lg h-14 w-52 border border-green-500 rounded-md pl-3 font-medium outline-green-500"
                     id="deposit"
                     type="number"
                     placeholder="Deposit amount (ETH)"

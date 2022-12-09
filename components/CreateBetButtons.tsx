@@ -60,7 +60,7 @@ function CreateBetButton() {
                                 onSuccess: async (tx: any) => {
                                     handleSuccess(tx as ContractTransaction);
                                     // setBetsSum((betsSum) => (Number(betsSum) + Number(msgValue)).toString());
-                                    localStorage.setItem("betsSum", (Number(localStorage.getItem("betsSum")) + Number(msgValue)).toString());
+                                    localStorage.setItem("betsSum", (Number(localStorage.getItem("betsSum")) + Number(msgValue)).toFixed(15));
 
                                     // setTimeout(async () => {
                                     //     await updateUI()
