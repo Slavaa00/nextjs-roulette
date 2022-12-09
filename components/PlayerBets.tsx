@@ -87,16 +87,17 @@ function PlayerBets() {
         allPlayersWinnings,
         currentCasinoBalance,
     ])
-    useEffect(() => {
-        console.log((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))))
+    // useEffect(() => {
+    //     console.log((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))))
 
-    }, [
+    // }, [
         
-        playerBalance
+    //     playerBalance
         
-    ])
+    // ])
     useEffect(() => {
-        console.log((Number(playerUIBalance) ))
+        // console.log((((ethers.utils.parseUnits(betsSum, "ether"))) ).toString(), ("HI"))
+        console.log((("HI") ))
 
     }, [
         

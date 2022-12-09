@@ -55,6 +55,8 @@ function OnchainDataContext({ children }: Props) {
     const minimalBet = "0.000000000000001";
     const maximumBet = "0.01";
 
+    let localBetsSum = localStorage.getItem("betsSum");
+
     const { chainId: chainIdHex, isWeb3Enabled, Moralis, account } = useMoralis()
 
     const dispatch = useNotification()
@@ -132,11 +134,11 @@ function OnchainDataContext({ children }: Props) {
 
     const [playerBalance, setPlayerBalance] = useState("0")
 
-    const [betsSum, setBetsSum] = useState(localStorage.getItem("betsSum") || "0")
+    const [betsSum, setBetsSum] = useState()
     
     useEffect(() => {
-        console.log(betsSum)
-    }, [betsSum])
+        setBetsSum(localBetsSum)
+    }, [localBetsSum])
   
 
     const [confetti, setConfetti] = useState(false)
