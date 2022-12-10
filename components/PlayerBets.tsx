@@ -88,6 +88,12 @@ function PlayerBets() {
         allPlayersWinnings,
         currentCasinoBalance,
     ])
+    useEffect(() => {
+      console.log(playerUIBalance)
+    }, [
+        playerUIBalance
+    ])
+    console.log((Number(localStorage.getItem("betsSum")) + Number(msgValue)).toFixed(15))
     // useEffect(() => {
     //     console.log((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))))
 
@@ -96,21 +102,22 @@ function PlayerBets() {
     //     playerBalance
         
     // ])
-    useEffect(() => {
-        if (betsSum) {
-            console.log((ethers.utils.parseUnits(betsSum, "ether")).toString())
-        console.log((("HI") ))
-        console.log(localBetsSum)
-        console.log(( ((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))) > Number(playerBalance)))
-        }
+    // useEffect(() => {
+    //     if (betsSum) {
+    //         console.log((ethers.utils.parseUnits(betsSum, "ether")).toString())
+    //     console.log((("HI") ))
+    //     console.log(localBetsSum)
+    //     console.log(( ((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))) ))
+    //     console.log(Number(playerBalance))
+    //     }
 
         
 
-    }, [
+    // }, [
         
-        betsSum
+    //     betsSum
         
-    ])
+    // ])
     // useEffect(() => {
        
     //     if (
@@ -206,15 +213,18 @@ function PlayerBets() {
     // ОТОБРАЗИТЬ ТУ ФИКСД
     useEffect(() => {
         // console.log(allPlayersWinnings > allPlayersWinningsUI)
-        setPlayerUIBalance(playerBalance)
-        setAllPlayersWinningsUI(allPlayersWinnings)
-        setCurrentCasinoUIBalance(currentCasinoBalance)
+        setPlayerUIBalance(playerBalance);
+        setAllPlayersWinningsUI(allPlayersWinnings);
+        setCurrentCasinoUIBalance(currentCasinoBalance);
         // console.log(playerBalance, playerUIBalance)
+        (betsSum ?  console.log(( ((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))) )) : null)
+        console.log(Number(playerBalance))
         if (allPlayersWinnings > allPlayersWinningsUI || currentCasinoBalance > currentCasinoUIBalance) 
             {
         //  console.log((Number(playerBalance) , (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))))
         // console.log( ((Number(playerBalance) -  ( Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))).toString()) )
 // + (ethers.utils.parseUnits(betsSum, "ether").toString())
+
                 if (confetti  &&  ( (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))) < Number(playerBalance) )) {
                                          setWinAmount((Number(playerBalance) -  ( Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))).toString())
                                         setFireConfetti(true)
@@ -231,15 +241,15 @@ function PlayerBets() {
 
 
                 }
-                if (confetti  &&  (Number(playerBalance) <= (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))))) {
-                        setFireSadDiv(true)
-        
-                            setTimeout(() => {
-                                setFireSadDiv(false)
-                            }, 10000)
-                            // setBetsSum("0")
-                        localStorage.setItem("betsSum", "0");
-
+                if (confetti  &&  ( (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))) >= Number(playerBalance) )) {
+                    setFireSadDiv(true)
+                
+                        setTimeout(() => {
+                            setFireSadDiv(false)
+                        }, 10000)
+                        // setBetsSum("0")
+                    localStorage.setItem("betsSum", "0");
+                
                 }
                 // if (confetti  &&  (Number(playerBalance) == (Number(playerUIBalance) + Number(betsSum)))) {
                 //         setFireNeutralDiv(true)
@@ -258,11 +268,7 @@ function PlayerBets() {
         playerBalance, allPlayersWinnings, currentCasinoBalance
       
     ])
-    useEffect(() => {
-    }, [
-        playerUIBalance
-      
-    ])
+   
     useEffect(() => {
         async function asyncUpdateBetsArr() {
             await updateBetsArr()
