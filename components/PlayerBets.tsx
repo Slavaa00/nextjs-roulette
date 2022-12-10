@@ -88,12 +88,17 @@ function PlayerBets() {
         allPlayersWinnings,
         currentCasinoBalance,
     ])
-    useEffect(() => {
-      console.log(playerUIBalance)
-    }, [
-        playerUIBalance
-    ])
-    console.log((Number(localStorage.getItem("betsSum")) + Number(msgValue)).toFixed(15))
+   
+    // useEffect(() => {
+    //     if (betsSum) {
+    //     console.log((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))))
+    //     console.log((Number(playerBalance) > (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))))
+
+    //     }
+
+    // }, [
+    //     playerBalance, msgValue
+    // ])
     // useEffect(() => {
     //     console.log((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))))
 
@@ -265,7 +270,7 @@ function PlayerBets() {
         
          
     }, [
-        playerBalance, allPlayersWinnings, currentCasinoBalance
+        playerBalance,  currentCasinoBalance
       
     ])
    

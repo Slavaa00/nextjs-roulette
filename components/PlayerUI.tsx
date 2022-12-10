@@ -65,7 +65,7 @@ function PlayerUI() {
         <>
             <div className="flex flex-col justify-center items-center">
                 <p className="py-4 px-7 text-3xl font-semibold rounded-[15px] w-max  text-white bg-[#533adb]">Your Current Balance: <span className="text-white ">{ethers.utils.formatEther(playerBalance)} ETH</span> </p>
-                <PlayerBets playerBalance={playerBalance}/>
+                <PlayerBets />
                 <CheckResult />
                 <Withdraw />
 
