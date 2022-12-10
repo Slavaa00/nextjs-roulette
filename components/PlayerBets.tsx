@@ -60,7 +60,8 @@ function PlayerBets() {
         setConfetti,
         betsSum,
         setBetsSum,
-        startGameValue
+        startGameValue,
+        localBetsSum
         
     }: any = useContext(AppContext)
 
@@ -99,6 +100,8 @@ function PlayerBets() {
         if (betsSum) {
             console.log((ethers.utils.parseUnits(betsSum, "ether")).toString())
         console.log((("HI") ))
+        console.log(localBetsSum)
+        console.log(( ((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))) < Number(playerBalance)))
         }
 
         
@@ -212,7 +215,7 @@ function PlayerBets() {
         //  console.log((Number(playerBalance) , (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))))
         // console.log( ((Number(playerBalance) -  ( Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))).toString()) )
 // + (ethers.utils.parseUnits(betsSum, "ether").toString())
-                if (confetti  &&  (Number(playerBalance) > (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))))) {
+                if (confetti  &&  ( (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))) < Number(playerBalance) )) {
                                          setWinAmount((Number(playerBalance) -  ( Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))).toString())
                                         setFireConfetti(true)
                                         setTimeout(() => {

@@ -321,7 +321,8 @@ function OnchainDataContext({ children }: Props) {
                 set_numbersForUI,
                 pickedNumbers, 
                 setPickedNumbers,
-                onClickNumbers
+                onClickNumbers,
+                localBetsSum
                 
             }}
         >
