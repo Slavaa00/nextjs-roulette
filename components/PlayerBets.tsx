@@ -96,8 +96,12 @@ function PlayerBets() {
         
     // ])
     useEffect(() => {
-        // console.log((((ethers.utils.parseUnits(betsSum, "ether"))) ).toString(), ("HI"))
+        if (betsSum) {
+            console.log((ethers.utils.parseUnits(betsSum, "ether")).toString())
         console.log((("HI") ))
+        }
+
+        
 
     }, [
         
