@@ -101,7 +101,7 @@ function PlayerBets() {
             console.log((ethers.utils.parseUnits(betsSum, "ether")).toString())
         console.log((("HI") ))
         console.log(localBetsSum)
-        console.log(( ((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))) < Number(playerBalance)))
+        console.log(( ((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))) > Number(playerBalance)))
         }
 
         
