@@ -176,6 +176,8 @@ function OnchainDataContext({ children }: Props) {
         let newCurrentCasinoBalance: string = "0"
         let newbetsArrLength: string = "0"
         if (allPlayersWinnings != "0" && currentCasinoBalance != "0") {
+            await updatePlayerBalance()
+
             await contract.allPlayersWinnings().then((value: any) => {
                 console.log(value.toString())
 
@@ -210,9 +212,9 @@ function OnchainDataContext({ children }: Props) {
             })
             
                
-            await updatePlayerBalance()
             await checkResult(newAllPlayersWinnings, newCurrentCasinoBalance, newbetsArrLength)
         } else {
+            await updatePlayerBalance()
             await contract.allPlayersWinnings().then((value: any) => {
                 newAllPlayersWinnings = value.toString()
                 setAllPlayersWinnings(value.toString())
@@ -233,7 +235,6 @@ function OnchainDataContext({ children }: Props) {
                 setOverallLiquidity(value.toString())
             })
             
-            await updatePlayerBalance()
             await checkResult(newAllPlayersWinnings, newCurrentCasinoBalance, "1")
         }
     }

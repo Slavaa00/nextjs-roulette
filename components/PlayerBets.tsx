@@ -270,7 +270,7 @@ function PlayerBets() {
         
          
     }, [
-        playerBalance,  currentCasinoBalance
+        playerBalance,  currentCasinoBalance, allPlayersWinnings
       
     ])
    
