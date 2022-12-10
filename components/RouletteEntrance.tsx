@@ -81,7 +81,7 @@ export default function RouletteEntrance() {
                         </>
                     ) : (
                         <button
-                            className="rounded-lg bg-[#ff0062] p-2 text-4xl font-bold text-white"
+                            className="underline rounded-lg bg-[#ff0062] p-3 text-4xl font-bold text-white hover:bg-[#00fffb]"
                             onClick={() =>
                                 switchChain("0x5")
                             }

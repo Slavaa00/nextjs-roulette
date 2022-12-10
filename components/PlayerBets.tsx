@@ -456,7 +456,8 @@ function PlayerBets() {
                         ) : null} */}
                     </div>
                 </div> 
-                 <div className="w-full pl-8 font-bold ">Total Bet Amount: <span className={`${Number(localStorage.getItem("betsSum")).toFixed(20) >= Number(startGameValue) ? ("text-[#22c55e]") : ("text-[#dc2626]") } `}>{Number(localStorage.getItem("betsSum")).toFixed(17).replace(/0*$/, "")}</span></div>                       
+                 <div className="w-full pl-8 font-bold ">Total Bet Amount: <span className={`${Number(localStorage.getItem("betsSum")).toFixed(20) >= Number(startGameValue) ? ("text-[#22c55e]") : ("text-[#dc2626]") } `}>{
+                (localStorage.getItem("betsSum")) != "0" ? Number(localStorage.getItem("betsSum")).toFixed(17).replace(/0*$/, "") : "0"} ETH</span></div>                       
                 {fireConfetti ? <Confetti /> : null}
             </div>
         </>
