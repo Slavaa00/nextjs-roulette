@@ -222,14 +222,14 @@ function PlayerBets() {
         setAllPlayersWinningsUI(allPlayersWinnings);
         setCurrentCasinoUIBalance(currentCasinoBalance);
         // console.log(playerBalance, playerUIBalance)
-        (betsSum ?  console.log(( ((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))) )) : null)
+        // (betsSum ?  console.log(( ((Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))) )) : null)
         console.log(Number(playerBalance))
         if (allPlayersWinnings > allPlayersWinningsUI || currentCasinoBalance > currentCasinoUIBalance) 
             {
         //  console.log((Number(playerBalance) , (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))))
         // console.log( ((Number(playerBalance) -  ( Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))).toString()) )
 // + (ethers.utils.parseUnits(betsSum, "ether").toString())
-
+                console.log((Number(playerBalance) -  ( Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))).toString())
                 if (confetti  &&  ( (Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether"))) < Number(playerBalance) )) {
                                          setWinAmount((Number(playerBalance) -  ( Number(playerUIBalance) + Number(ethers.utils.parseUnits(betsSum, "ether")))).toString())
                                         setFireConfetti(true)
