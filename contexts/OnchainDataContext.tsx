@@ -134,7 +134,7 @@ function OnchainDataContext({ children }: Props) {
 
     const [playerBalance, setPlayerBalance] = useState("0")
 
-    const [betsSum, setBetsSum] = useState("")
+    const [betsSum, setBetsSum] = useState("0")
     
     useEffect(() => {
         setBetsSum(localBetsSum)

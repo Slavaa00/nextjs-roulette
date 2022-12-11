@@ -416,8 +416,8 @@ function PlayerBets() {
                                     won!
                                 </p>
                                 <p className="mt-6">
-                                    Your total winnings
-                                    after the last spin is:
+                                    Total winnings
+                                    after last Roulette spin:
                                 </p>{" "}
                                 <p className="mt-4 text-[#ff0062]">
                                     +
@@ -457,7 +457,7 @@ function PlayerBets() {
                     </div>
                 </div> 
                  <div className="w-full pl-8 font-bold ">Total Bet Amount: <span className={`${Number(localStorage.getItem("betsSum")).toFixed(20) >= Number(startGameValue) ? ("text-[#22c55e]") : ("text-[#dc2626]") } `}>{
-                (localStorage.getItem("betsSum")) != "0" ? Number(localStorage.getItem("betsSum")).toFixed(17).replace(/0*$/, "") : "0"} ETH</span></div>                       
+                betsSum != "0" ? Number(localStorage.getItem("betsSum")).toFixed(17).replace(/0*$/, "") : "0"} ETH</span></div>                       
                 {fireConfetti ? <Confetti /> : null}
             </div>
         </>
