@@ -70,7 +70,7 @@ function BetType() {
                         <button
                             onClick={() => {onClickBetType(betType)}} //ff0062  000dff
                             key={v4()}
-                            className={ `${betType == _betTypeForUI ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")} ml-2 mt-3 border p-1 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`} 
+                            className={ `${betType == _betTypeForUI ? ("bg-[#ff0062] text-[#ffffff]") : ("bg-[#d9fdff] text-black")} ml-2 mt-3 border border-[#c2c2c2] p-1 rounded-md text-base font-semibold hover:bg-[#ff0062] hover:text-[#ffffff]`} 
                         >
                             {betType}
                         </button>

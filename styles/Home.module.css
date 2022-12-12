@@ -7,7 +7,7 @@ background-size: 1920px 1500px; */
 width: 1903px;
 height: 1328px;
 background: rgb(220,249,255);
-background: linear-gradient(90deg, rgba(220,249,255,1) 0%,  rgba(255,248,243,1) 60%, rgba(255,248,243,1) 65%, rgba(255,218,237,1) 100%);
+background: linear-gradient(90deg, rgba(220,249,255,1) 0%,  rgba(255,248,243,1) 60%, rgba(255,248,243,1) 65%, rgba(255,223,245,1) 100%);
 }
 .main {
     min-height: 100vh;
