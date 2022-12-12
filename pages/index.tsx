@@ -6,7 +6,7 @@ import RouletteEntrance from "../components/RouletteEntrance"
 
 export default function Home() {
     return (
-       
+       <div className={styles.wrapper}>
         <div className={styles.container}>
             <Head>
                 <title >Roulette</title>
@@ -17,6 +17,6 @@ export default function Home() {
             <Header />
             <RouletteEntrance />
         </div>
-       
+       </div>
     )
 }

@@ -45,6 +45,8 @@ function Field() {
 
     const [currentBetType, setCurrentBetType] = useState()
 
+    const [twosType, setTwosType] = useState("Horizontal")
+
     useEffect(() => {setCurrentBetType(_betType)}, [_betType])
 
     function colorizeLastWinningNumber(_lastWinningNumber) {
@@ -191,10 +193,13 @@ function Field() {
                <div className={styles.containerThrees}>
   <div className={styles.Zero} onClick={() => {set_betType(0); 
         onClickBetType("Single Number (Straight Up)"); set_numbers([0]); onClickNumbers(1, [0])}}></div>
+
+
    <div className={styles.LeftZeroThree} onClick={() => {set_betType(2); 
-        onClickBetType("Three Numbers (Street)"); set_numbers([0, 1, 2]); onClickNumbers(110, [0, 1, 2])}}></div>
+        onClickBetType("Three Numbers (Street)"); set_numbers([0, 1, 2]); onClickNumbers(110, [0, 1, 2])}}>0-1-2</div>
   <div className={styles.RightZeroThree} onClick={() => {set_betType(2); 
-        onClickBetType("Three Numbers (Street)"); set_numbers([0, 2, 3]); onClickNumbers(111, [0, 2, 3])}}></div>
+        onClickBetType("Three Numbers (Street)"); set_numbers([0, 2, 3]); onClickNumbers(111, [0, 2, 3])}}>0-2-3</div>
+
 
   <div className={styles.FirstThree} onClick={() => {set_betType(2); 
         onClickBetType("Three Numbers (Street)"); set_numbers([1, 2, 3]); onClickNumbers(98, [1, 2, 3])}}></div>
@@ -384,66 +389,18 @@ function Field() {
   <div className={styles.ThirtyTwoThirtyThreeThirtyFiveThirtySix} onClick={() => {set_betType(3); 
         onClickBetType("Four Numbers (Corner Bet)"); set_numbers([32, 33, 35, 36]); onClickNumbers(133, [32, 33, 35, 36])}}></div>
   <div className={styles.ZeroOneTwoThree} onClick={() => {set_betType(3); 
-        onClickBetType("Four Numbers (Corner Bet)"); set_numbers([0, 1, 2, 3]); onClickNumbers(134, [0, 1, 2, 3])}}></div>
+        onClickBetType("Four Numbers (Corner Bet)"); set_numbers([0, 1, 2, 3]); onClickNumbers(134, [0, 1, 2, 3])}}>0-1-2-3</div>
 </div>
 </div> 
 
 
-<div className={`${(currentBetType == 1) ? ("") : ("hidden")}`}>
-               <div className={styles.containerTwos}>
+<div className={`${(currentBetType == 1 && twosType == "Vertical") ? ("") : ("hidden")}`}>
+               <div className={styles.containerTwosVertical}>
   
 
 
-
-  <div className={styles.OneTwo} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([1, 2]); onClickNumbers(38, [1, 2])}}></div>
-  <div className={styles.TwoThree} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([2, 3]); onClickNumbers(39, [2, 3])}}></div>
-  <div className={styles.FourFive} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([4, 5]); onClickNumbers(40, [4, 5])}}></div>
-  <div className={styles.FiveSix} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([5, 6]); onClickNumbers(41, [5, 6])}}></div>
-  <div className={styles.SevenEight} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([7, 8]); onClickNumbers(42, [7, 8])}}></div>
-  <div className={styles.EightNine} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([8, 9]); onClickNumbers(43, [8, 9])}}></div>
-  <div className={styles.TenEleven} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([10, 11]); onClickNumbers(44, [10, 11])}}></div>
-  <div className={styles.ElevenTwelve} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([11, 12]); onClickNumbers(45, [11, 12])}}></div>
-  <div className={styles.ThirteenFourteen} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([13, 14]); onClickNumbers(46, [13, 14])}}></div>
-  <div className={styles.FourteenFifteen} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([14, 15]); onClickNumbers(47, [14, 15])}}></div>
-  <div className={styles.SixteenSeventeen} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([16, 17]); onClickNumbers(48, [16, 17])}}></div>
-  <div className={styles.SeventeenEighteen} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([17, 18]); onClickNumbers(49, [17, 18])}}></div>
-  <div className={styles.NineteenTwenty} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([19, 20]); onClickNumbers(50, [19, 20])}}></div>
-  <div className={styles.TwentyTwentyOne} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([20, 21]); onClickNumbers(51, [20, 21])}}></div>
-  <div className={styles.TwentyTwoTwentyThree} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([22, 23]); onClickNumbers(52, [22, 23])}}></div>
-  <div className={styles.TwentyThreeTwentyFour} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([23, 24]); onClickNumbers(53, [23, 24])}}></div>
-  <div className={styles.TwentyFiveTwentySix} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([25, 26]); onClickNumbers(54, [25, 26])}}></div>
-  <div className={styles.TwentySixTwentySeven} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([26, 27]); onClickNumbers(55, [26, 27])}}></div>
-  <div className={styles.TwentyEightTwentyNine} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([28, 29]); onClickNumbers(56, [28, 29])}}></div>
-  <div className={styles.TwentyNineThirty} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([29, 30]); onClickNumbers(57, [29, 30])}}></div>
-  <div className={styles.ThirtyOneThirtyTwo} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([31, 32]); onClickNumbers(58, [31, 32])}}></div>
-  <div className={styles.ThirtyTwoThirtyThree} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([32, 33]); onClickNumbers(59, [32, 33])}}></div>
-  <div className={styles.ThirtyFourThirtyFive} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([34, 35]); onClickNumbers(60, [34, 35])}}></div>
-  <div className={styles.ThirtyFiveThirtySix} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([35, 36]); onClickNumbers(61, [35, 36])}}></div>
-
+               <div className={styles.HorizontalBtn} onClick={() => {setTwosType("Horizontal")}}><span >Horizontal</span></div>
+  <div className={styles.VerticalBtn} onClick={() => {setTwosType("Vertical")}}><span className={`${twosType == "Vertical" ? "text-[#00ff5e]" : ""}`}>Vertical</span></div>
 
 
   <div className={styles.OneFour} onClick={() => {set_betType(1); 
@@ -514,11 +471,111 @@ function Field() {
   <div className={styles.ThirtyThreeThirtySix} onClick={() => {set_betType(1); 
         onClickBetType("Double Numbers (Split)"); set_numbers([33, 36]); onClickNumbers(94, [33, 36])}}></div>
   <div className={styles.ZeroOne} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([0, 1]); onClickNumbers(95, [0, 1])}}></div>
+        onClickBetType("Double Numbers (Split)"); set_numbers([0, 1]); onClickNumbers(95, [0, 1])}}>0-1</div>
   <div className={styles.ZeroTwo} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([0, 2]); onClickNumbers(96, [0, 2])}}></div>
+        onClickBetType("Double Numbers (Split)"); set_numbers([0, 2]); onClickNumbers(96, [0, 2])}}>0-2</div>
   <div className={styles.ZeroThree} onClick={() => {set_betType(1); 
-        onClickBetType("Double Numbers (Split)"); set_numbers([0, 3]); onClickNumbers(97, [0, 3])}}></div>
+        onClickBetType("Double Numbers (Split)"); set_numbers([0, 3]); onClickNumbers(97, [0, 3])}}>0-3</div>
+ 
+ 
+
+  <div className={styles.LeftColumnFours} onClick={() => {set_betType(5); 
+        onClickBetType("Column (Twelve Numbers)"); set_numbers([0]); onClickNumbers(141, [0])}}></div>
+  <div className={styles.MiddleColumnFours} onClick={() => {set_betType(5); 
+        onClickBetType("Column (Twelve Numbers)"); set_numbers([1]); onClickNumbers(142, [1])}}></div>
+  <div className={styles.RightColumnFours} onClick={() => {set_betType(5); 
+        onClickBetType("Column (Twelve Numbers)"); set_numbers([2]); onClickNumbers(143, [2])}}></div>
+  <div className={styles.FirstDozenFours} onClick={() => {set_betType(6); 
+        onClickBetType("Twelve Numbers (Dozen)"); set_numbers([0]); onClickNumbers(144, [0])}}></div>
+  <div className={styles.SecondDozenFours} onClick={() => {set_betType(6); 
+        onClickBetType("Twelve Numbers (Dozen)"); set_numbers([1]); onClickNumbers(145, [1])}}></div>
+  <div className={styles.ThirdDozenFours} onClick={() => {set_betType(6); 
+        onClickBetType("Twelve Numbers (Dozen)"); set_numbers([2]); onClickNumbers(146, [2])}}></div>
+  <div className={styles.LowEighteenFours} onClick={() => {set_betType(7); 
+        onClickBetType("Eighteen Numbers (Low (1-18) or High (19-36))"); set_numbers([0]); onClickNumbers(147, [0])}}></div>
+  <div className={styles.HighEighteenFours} onClick={() => {set_betType(7); 
+        onClickBetType("Eighteen Numbers (Low (1-18) or High (19-36))"); set_numbers([1]); onClickNumbers(148, [1])}}></div>
+  <div className={styles.EvenFours} onClick={() => {set_betType(8); 
+        onClickBetType("Even or Odd"); set_numbers([0]); onClickNumbers(149, [0])}}></div>
+  <div className={styles.OddFours} onClick={() => {set_betType(8); 
+        onClickBetType("Even or Odd"); set_numbers([1]); onClickNumbers(150, [1])}}></div>
+  <div className={styles.BlackFours} onClick={() => {set_betType(9); 
+        onClickBetType("Color (Black or Red)"); set_numbers([0]); onClickNumbers(151, [0])}}></div>
+  <div className={styles.RedFours} onClick={() => {set_betType(9); 
+        onClickBetType("Color (Black or Red)"); set_numbers([1]); onClickNumbers(152, [1])}}></div>
+        </div>
+</div> 
+
+
+<div className={`${(currentBetType == 1 && twosType == "Horizontal") ? ("") : ("hidden")}`}>
+               <div className={styles.containerTwosHorizontal}>
+  
+
+              
+
+  <div className={styles.HorizontalBtn} onClick={() => {setTwosType("Horizontal")}}><span className={`${twosType == "Horizontal" ? "text-[#00ff5e]" : ""}`}>Horizontal</span></div>
+  <div className={styles.VerticalBtn} onClick={() => {setTwosType("Vertical")}}><span >Vertical</span></div>
+
+
+  <div className={styles.OneTwo} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([1, 2]); onClickNumbers(38, [1, 2])}}></div>
+  <div className={styles.TwoThree} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([2, 3]); onClickNumbers(39, [2, 3])}}></div>
+  <div className={styles.FourFive} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([4, 5]); onClickNumbers(40, [4, 5])}}></div>
+  <div className={styles.FiveSix} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([5, 6]); onClickNumbers(41, [5, 6])}}></div>
+  <div className={styles.SevenEight} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([7, 8]); onClickNumbers(42, [7, 8])}}></div>
+  <div className={styles.EightNine} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([8, 9]); onClickNumbers(43, [8, 9])}}></div>
+  <div className={styles.TenEleven} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([10, 11]); onClickNumbers(44, [10, 11])}}></div>
+  <div className={styles.ElevenTwelve} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([11, 12]); onClickNumbers(45, [11, 12])}}></div>
+  <div className={styles.ThirteenFourteen} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([13, 14]); onClickNumbers(46, [13, 14])}}></div>
+  <div className={styles.FourteenFifteen} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([14, 15]); onClickNumbers(47, [14, 15])}}></div>
+  <div className={styles.SixteenSeventeen} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([16, 17]); onClickNumbers(48, [16, 17])}}></div>
+  <div className={styles.SeventeenEighteen} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([17, 18]); onClickNumbers(49, [17, 18])}}></div>
+  <div className={styles.NineteenTwenty} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([19, 20]); onClickNumbers(50, [19, 20])}}></div>
+  <div className={styles.TwentyTwentyOne} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([20, 21]); onClickNumbers(51, [20, 21])}}></div>
+  <div className={styles.TwentyTwoTwentyThree} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([22, 23]); onClickNumbers(52, [22, 23])}}></div>
+  <div className={styles.TwentyThreeTwentyFour} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([23, 24]); onClickNumbers(53, [23, 24])}}></div>
+  <div className={styles.TwentyFiveTwentySix} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([25, 26]); onClickNumbers(54, [25, 26])}}></div>
+  <div className={styles.TwentySixTwentySeven} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([26, 27]); onClickNumbers(55, [26, 27])}}></div>
+  <div className={styles.TwentyEightTwentyNine} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([28, 29]); onClickNumbers(56, [28, 29])}}></div>
+  <div className={styles.TwentyNineThirty} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([29, 30]); onClickNumbers(57, [29, 30])}}></div>
+  <div className={styles.ThirtyOneThirtyTwo} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([31, 32]); onClickNumbers(58, [31, 32])}}></div>
+  <div className={styles.ThirtyTwoThirtyThree} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([32, 33]); onClickNumbers(59, [32, 33])}}></div>
+  <div className={styles.ThirtyFourThirtyFive} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([34, 35]); onClickNumbers(60, [34, 35])}}></div>
+  <div className={styles.ThirtyFiveThirtySix} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([35, 36]); onClickNumbers(61, [35, 36])}}></div>
+
+
+
+ 
+
+  <div className={styles.ZeroOne} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([0, 1]); onClickNumbers(95, [0, 1])}}>0-1</div>
+  <div className={styles.ZeroTwo} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([0, 2]); onClickNumbers(96, [0, 2])}}>0-2</div>
+  <div className={styles.ZeroThree} onClick={() => {set_betType(1); 
+        onClickBetType("Double Numbers (Split)"); set_numbers([0, 3]); onClickNumbers(97, [0, 3])}}>0-3</div>
  
  
 

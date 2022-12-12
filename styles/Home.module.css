@@ -1,7 +1,14 @@
 .container {
-    
+    /* background: rgb(255,0,215);
+background: linear-gradient(90deg, rgba(255,0,215,1) 0%, rgba(0,121,199,1) 50%, rgba(0,212,255,1) 100%) ;
+background-size: 1920px 1500px; */
 }
-
+.wrapper {
+width: 1903px;
+height: 1328px;
+background: rgb(220,249,255);
+background: linear-gradient(90deg, rgba(220,249,255,1) 0%,  rgba(255,248,243,1) 41%, rgba(255,248,243,1) 60%, rgba(255,207,231,1) 100%);
+}
 .main {
     min-height: 100vh;
     padding: 4rem 0;
