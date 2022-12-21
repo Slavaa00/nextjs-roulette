@@ -482,7 +482,7 @@
 .containerTwosVertical {  
   height: 900px;
   width: 450px;
-  background: no-repeat url("../public/roulette-field.png");
+  background: no-repeat url("../public/roulette-field-without-zero.png");
   background-size: cover;
   display: grid;
   padding-left: 26px;
@@ -497,7 +497,7 @@
 .containerTwosHorizontal {  
   height: 900px;
   width: 450px;
-  background: no-repeat url("../public/roulette-field.png");
+  background: no-repeat url("../public/roulette-field-without-zero.png");
   background-size: cover;
   display: grid;
   padding-left: 26px;
@@ -538,7 +538,7 @@
  /* .ZeroOne:hover:after { content: "0-1"; 
   cursor: pointer;   opacity: 1; font-size:30px;   color: black; margin-left: 16px; margin-top: 16px;}  */
 
-.ZeroTwo { grid-area: 1 / 4 / 2 / 5;  color: white; font-size:31px; padding-top: 22px; padding-left: 15px;}
+.ZeroTwo { grid-area: 1 / 4 / 2 / 5;  color: white; font-size:31px; padding-top: 22px; padding-left: 15px; }
 .ZeroTwo:hover { background: rgba(256, 256, 256, .5);  cursor: pointer; }
 /* .ZeroTwo:hover:after { content: "0-2"; 
   cursor: pointer;   opacity: 1; font-size:30px;   color: black; margin-left: 16px; margin-top: 16px;}  */
